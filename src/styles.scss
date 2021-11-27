@@ -5763,17 +5763,19 @@ div.woocommerce {
 }
 
 @media (max-width: 870px){
-.rst-nav-menu {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    z-index: 999;
-    background: #fff;
-    float: none;
-    border-bottom: 1px solid #e5e5e5;
-}}
+    .rst-nav-menu {
+        position: absolute;
+        top: 100%;
+        width: 50%;
+        left: 0;
+        z-index: 999;
+        background: #fff;
+        float: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
 
 // .rst-nav-menu {
 //     display: block;
 // }
+
