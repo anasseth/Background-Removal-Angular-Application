@@ -1,0 +1,80 @@
+h1 {
+    font-size: 40px;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    color: black;
+}
+
+.rm-icon-list {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: #E6F2FF!important;
+    color: #000;
+}
+.rm-icon-list-inner {
+    width: 1360px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+}
+.rm-icon-list {
+    margin-top: -140px;
+}
+
+.rm-icon {
+    width: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.rm-icon-list .rm-icon {
+    color: #000;
+}
+.rm-icon-title {
+    width: 60%;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+///faqs css
+.rm-faq-list {
+    width: 855px;
+    margin: 0 auto;
+    padding: 30px 25px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 5px rgb(0 0 0 / 4%);
+    margin-bottom: 20px;
+}
+
+.rm-heading {
+    text-align: center ;
+    margin-bottom: 80px;
+}
+
+.rm-faq-list .rm-faq-title {
+    color: #4a76fe;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+
+@media (max-width: 599px){
+.rm-icon-list-inner  {
+     flex-wrap: wrap ;
+    
+   
+}
+
+}
+
+@media (max-width: 599px){
+.rm-icon {
+    width: 100%;
+    margin-bottom: 50px;
+}}
+
