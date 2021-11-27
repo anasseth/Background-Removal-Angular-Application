@@ -75,7 +75,7 @@ a:hover {
     margin-top: 5px;
     color: #ffffff;
     font-weight: bold;
-    font-size: 12px;
+    // font-size: 12px;
     transition: .5s;
 }
 p {
@@ -92,22 +92,24 @@ p {
 }
 
 
- .rst-say-hi a {
+ .rst-say-hi .hi {
     background-color: #311b92;
     color: #fff;
     font-weight: 700;
     padding: 15px 25px;
     border-radius: 4px;
-    
+    transition: .5s;
+
 }
- .rst-say-hi a:hover {
+ .rst-say-hi .hi:hover {
     background-color: #311b92;
     color: #fff;
     font-weight: 700;
     padding: 15px 25px;
     border-radius: 30px;
     transition: .5s;
-    transform: scale(2); /* Equal to scaleX(0.7) scaleY(0.7) */
+    font-size: 16px !important;
+    transform: scale(2) !important; 
    
 }
 
