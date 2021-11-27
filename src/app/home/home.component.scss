@@ -75,18 +75,50 @@ a:hover {
     margin-top: 5px;
     color: #ffffff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     transition: .5s;
 }
 p {
     margin: 0em 0em 1em;
-    line-height: 20px;
+    line-height: 30px;
 }
-// .rst-product-content .rst-product-content-item::before {
-//     font-family: "Font Awesome 5 Pro";
-//     content: '\f111' !important;
-//     color: #4E7EFE;
-//     font-weight: 600;
-//     margin-right: 10px;
-//     font-size: 8px;
-// }
+.new-home-content .rst-say-hi .rst-say-hi-content h3 {
+    color: #311b92!important;
+}
+.new-home-content .rst-say-hi .rst-say-hi-content {
+    // padding-left: 140px;
+    // padding-right: 260px;
+    color: #311b92!important;
+}
+
+
+ .rst-say-hi a {
+    background-color: #311b92;
+    color: #fff;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 4px;
+    
+}
+ .rst-say-hi a:hover {
+    background-color: #311b92;
+    color: #fff;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 30px;
+    transition: .5s;
+    transform: scale(2); /* Equal to scaleX(0.7) scaleY(0.7) */
+   
+}
+
+
+.new-home-content .rst-customer-comment {
+    box-shadow: rgba(0, 0, 255, 0.2) 0px 7px 29px 0px !important;
+}
+
+.rst-home-blog {
+    background-color: #311b92;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: #fff;
+}
