@@ -1,3 +1,7 @@
+
+// @import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+
 #header {
     background-color: #fff;
 }
@@ -5775,7 +5779,11 @@ div.woocommerce {
     }
 }
 
-// .rst-nav-menu {
-//     display: block;
+// .fa-twitter:before {
+//     content: "\f099";
+// }
+
+// .fa-twitter:before {
+//     content: "\f099" !important;
 // }
 

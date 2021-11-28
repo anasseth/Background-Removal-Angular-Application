@@ -136,6 +136,14 @@ p {
     color:#7d8285;
   }
   
+.msg{
+    color:#313437 !important;
+}
+.msg:hover{
+    color:#ffffff !important;
+}
+
+
   .testimonials-clean h2 {
     font-weight:bold;
     margin-bottom:40px;
@@ -180,16 +188,20 @@ p {
     background-color:#fff;
     position:relative;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: .5s;
+    border-radius: 20px;
 
   }
   
-//   .testimonials-clean .item .box:hover {
-//     padding:30px;
-//     background-color: #b39ddb;
-//     position:relative;
-//     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-//   }
+  .testimonials-clean .item .box:hover {
+    padding:30px;
+    background-color: #311b92;
+    position:relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+    transition: .5s;
+//    color: white !important;
+  }
   .testimonials-clean .item .box:after {
     content:'';
     position:absolute;
@@ -218,6 +230,8 @@ p {
     font-size:13px;
     color:#9da9ae;
   }
+    
+
   
   .testimonials-clean .item .description {
     font-size:15px;
@@ -230,5 +244,4 @@ p {
     margin-right:12px;
     margin-top:-5px;
   }
-  
   
