@@ -958,9 +958,9 @@ a:hover {
     margin : 0 2px
 }
 
-.social-media i {
-    font-family: "Font Awesome 5 Brands" !important
-}
+// .social-media i {
+//     font-family: "Font Awesome 5 Brands" !important
+// }
 
 .social-media li a {
     width        : 28px;
@@ -4530,7 +4530,7 @@ div.woocommerce {
 }
 
 .rst-product-content .rst-product-content-item::before {
-    font-family : "Font Awesome 5 Pro";
+    // font-family : "Font Awesome 5 Pro";
     content     : '\f111';
     color       : #4E7EFE;
     font-weight : 600;
@@ -5751,20 +5751,20 @@ div.woocommerce {
 
 //font awsome icon
 
-.fab {
-    font-family: "Font Awesome 5 Brands";
-    font-weight: 400;
-}
+// .fab {
+// 	font-family: "Font Awesome 5 Brands";
+// 	font-weight: 400
+// }
 
-.fa, .fab, .fad, .fal, .far, .fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-}
+// .fa, .fab, .fad, .fal, .far, .fas {
+//     -moz-osx-font-smoothing: grayscale;
+//     -webkit-font-smoothing: antialiased;
+//     display: inline-block;
+//     font-style: normal;
+//     font-variant: normal;
+//     text-rendering: auto;
+//     line-height: 1;
+// }
 
 @media (max-width: 870px){
     .rst-nav-menu {
@@ -5849,3 +5849,9 @@ input:focus ,textarea:focus{
     font-weight: 500;
     color: rgb(124, 124, 124);
 }
+
+// .fa-twitter:before {
+//     content: "\f099";
+// }
+
+
