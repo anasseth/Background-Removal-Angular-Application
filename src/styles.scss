@@ -5778,7 +5778,12 @@ div.woocommerce {
         border-bottom: 1px solid #e5e5e5;
     }
 }
-
+input:focus ,textarea:focus{
+    border: 2px solid #311b92 !important;
+    outline: none;
+    transition: .2s;
+    border-radius: 20px !important;
+  }
 // .fa-twitter:before {
 //     content: "\f099";
 // }
@@ -5787,3 +5792,60 @@ div.woocommerce {
 //     content: "\f099" !important;
 // }
 
+
+
+///accordian//
+.accordion-button {
+    font-size    : 18px;
+    // color: #ffffff;
+    font-weight  : 500;
+    // background: #27355f;
+    padding      : 20px;
+    // border-radius: 20px !important;
+
+}
+
+.acc{
+    margin-left: 10%;
+    margin-right: 10%;
+    // margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+}
+
+.accordion-button:not(.collapsed){
+        background: #311b92;
+        color: #ffffff;
+
+        
+}
+
+.accordion-item:first-of-type {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+
+.accordion-item:last-of-type {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: calc(20px);
+    border-top-right-radius: calc(20px);
+}
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='gray'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+// .accordion-button::before {
+
+// background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+// }
+
+.accordion-body {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(124, 124, 124);
+}
