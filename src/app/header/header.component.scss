@@ -1,3 +1,15 @@
 // .rst-logo{
 //     transform: translate(-33%,-30%);
 // }
+
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 45;
+    padding: 20px 0;
+    transition: top 0.4s, padding 0.4s, background 0.2s;
+    border-bottom: 0px solid purple;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
