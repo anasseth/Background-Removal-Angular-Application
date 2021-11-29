@@ -4529,10 +4529,11 @@ div.woocommerce {
     margin: 0em 0em .2em
 }
 
+
 .rst-product-content .rst-product-content-item::before {
     // font-family : "Font Awesome 5 Pro";
-    content     : '\f111' !important;
-    color       : #4E7EFE !important;
+    content     : '\f111';
+    color       : #4E7EFE;
     font-weight : 600;
     margin-right: 10px;
     font-size   : 8px

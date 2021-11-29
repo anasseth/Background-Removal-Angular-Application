@@ -58,17 +58,17 @@
 
 }
 
-// .rst_box_privacy:hover {
-//     border: 3px solid #ffffff;
-//     padding: 45px 15px 70px 15px;
-//     margin-bottom: 30px;
-//     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-//     background-color: #311b92;
-//     color: white !important;
-//     transition: .5s;
-//     border-radius: 20px;
-
-// }
+.rst_box_privacy:hover {
+    border: 3px solid #311b92;
+    padding: 45px 15px 70px 15px;
+    margin-bottom: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // background-color: #311b92;
+    color: white !important;
+    transition: .5s;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
 // .rst_box_privacy p:hover {
 //     min-height: 160px;
@@ -86,3 +86,4 @@
 //     line-height: 20px;
 //     margin: 45px 0 15px 0;
 // }
+
