@@ -4531,8 +4531,8 @@ div.woocommerce {
 
 .rst-product-content .rst-product-content-item::before {
     // font-family : "Font Awesome 5 Pro";
-    content     : '\f111';
-    color       : #4E7EFE;
+    content     : '\f111' !important;
+    color       : #4E7EFE !important;
     font-weight : 600;
     margin-right: 10px;
     font-size   : 8px
