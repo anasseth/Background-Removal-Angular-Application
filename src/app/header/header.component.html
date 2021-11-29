@@ -10,9 +10,10 @@
             <div class="rst-nav-menu">
                 <ul id="primary-menu" class="menu">
                     <li id="" class="menu-item menu-item-type-post_type menu-item-object-page mega-menu-item">
-                        <a href="#">Tool &amp; API</a>
-                        <!--Drop Down-->
-                        <ul class="drop-down-ul">
+                        <a (click)="Gotoprice()">Pricing</a>
+
+                        <!-- <a href="#">Tool &amp; API</a> -->
+                        <!-- <ul class="drop-down-ul">
                             <li class="menu-child-item  ">
                                 <a href="/api-documentation/">
                                     <p><b>API Access</b></p>
@@ -27,23 +28,29 @@
                                             MAC</span></p>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li id="" class="menu-item menu-item-type-post_type menu-item-object-page ">
-                        <a (click)="Gotoprice()">Pricing</a>
+                        <a (click)="Gototermcondition()">Term & Condition</a>
                     </li>
                 </ul>
                 <ul id="menu-header-2" class="menu">
-                    <li id="upload-page" class="menu-item menu-item-type-post_type menu-item-object-page ">
+                    <!-- <li id="upload-page" class="menu-item menu-item-type-post_type menu-item-object-page ">
                         <a id="upload-page-link" href="/upload/">Remove Background</a>
+                    </li> -->
+                    <li id="upload-page" class="menu-item menu-item-type-post_type menu-item-object-page ">
+                        <a id="upload-page-link" (click)="Gotoprivacy()">Privacy</a>
                     </li>
-                    <li id="" class="menu-item menu-item-type-post_type menu-item-object-page ">
+                    <li id="upload-page" class="menu-item menu-item-type-post_type menu-item-object-page ">
+                        <a id="upload-page-link" (click)="Gotocontactus()">Contact us</a>
+                    </li>
+                    <!-- <li id="" class="menu-item menu-item-type-post_type menu-item-object-page ">
                         <a href="/manual-removal-background-services/">Manual
                             Services</a>
                     </li>
                     <li id="" class="menu-item menu-item-type-post_type menu-item-object-page ">
                         <a href="/login/">Login</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <button class="rst-menu-trigger">

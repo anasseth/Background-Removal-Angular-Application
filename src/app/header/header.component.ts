@@ -15,4 +15,14 @@ export class HeaderComponent implements OnInit {
   Gotoprice() {
     this.router.navigate(['/pricing']);
   }
+
+  Gotoprivacy() {
+    this.router.navigate(['/privacypolicy']);
+  }
+  Gototermcondition() {
+    this.router.navigate(['/termcondition']);
+  }
+  Gotocontactus() {
+    this.router.navigate(['/contactus']);
+  }
 }
