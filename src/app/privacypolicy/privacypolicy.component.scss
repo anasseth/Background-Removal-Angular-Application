@@ -1,30 +1,43 @@
 
 
-.rst-banner-term {
-    // margin-bottom: 0px;
-    background:#f8f8f6 none;
-}
 
 .rst-inner-banner-term {
-    padding: 120px 0 25px !important;
+    padding: 224px 0 124px !important;
 }
-.rst_inner_content_term {
-    padding-bottom: 0px;
-}
+
 .service_title h1 {
      font-size: 45px; 
-    color: #000;
+    color: rgb(255, 255, 255);
     line-height: 1;
     text-transform: uppercase;
     position: relative;
-    padding-top: 40px;
-    margin: 0;
+    padding-bottom: 50px;
+
 }
+
+// .service_title:hover h1 {
+//     font-size: 45px; 
+//    color: rgb(255, 255, 255);
+//    line-height: 1;
+//    text-transform: uppercase;
+//    position: relative;
+//    padding-bottom: 50px;
+
+// }
 
 .rst-banner-privacy {
     margin-bottom: 37px;
-    background:#f8f8f6 none;
+    background:#d1c4e9 none;
+    transition: 1s;
+
 }
+
+// .rst-banner-privacy:hover {
+//     margin-bottom: 37px;
+//     background:#311b92 none;
+//     transition: 1s;
+//     color: white;
+// }
 
 .rst_content_top_privacy > h2 {
     color: #000;
@@ -43,7 +56,7 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 32px;
-    padding-top: 65px;
+    // padding-top: 65px;
     background:#ffffff none;
 
     /* background: url(https://removal.ai/wp-content/themes/remove/css/../images/bg_title_our_work2.png) no-repeat top center; */
@@ -87,3 +100,15 @@
 //     margin: 45px 0 15px 0;
 // }
 
+
+.backcolor {
+    background-color: #ecf0f4 !important;
+    background-image: url(../../assets/images/purple1.jpg);
+    /* background-image: url(../../assets/img/a15c320b-c679-4f01-9aab-d6dbb4c383a0.png); */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+
+
+}

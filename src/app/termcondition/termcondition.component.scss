@@ -2,13 +2,31 @@
 
 .rst-banner-term {
     margin-bottom: 0px;
-    background:#f8f8f6 none;
+    background:#d1c4e9 none;
+    // color: white !important;
 }
 
 .rst-inner-banner-term {
-    padding: 168px 0 12px !important;
+    padding: 264px 0 124px !important;
 }
 
 .rst_inner_content_term {
     padding-bottom: 0px;
+}
+
+
+.backcolor {
+    background-color: #ecf0f4 !important;
+    background-image: url(../../assets/images/purple1.jpg);
+    /* background-image: url(../../assets/img/a15c320b-c679-4f01-9aab-d6dbb4c383a0.png); */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+
+
+}
+h1{
+    color: white !important;
+ text-transform: uppercase;
 }
