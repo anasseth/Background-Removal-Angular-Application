@@ -1,94 +1,116 @@
 h1 {
-    font-size: 40px;
-    line-height: 1.4;
-    margin: 0 0 20px 0;
-    font-weight: 700;
-    color: black;
+  font-size: 40px;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  color: black;
 }
 
 .rm-icon-list {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background-color: #f8f8f8 !important;
-    color: #000;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #f8f8f8 !important;
+  color: #000;
+}
+
+.rst-banner-term {
+  margin-bottom: 0px;
+  background: #d1c4e9 none;
+  // color: white !important;
+}
+
+.rst-inner-banner-term {
+  padding: 264px 0 124px !important;
+}
+
+.rst_inner_content_term {
+  padding-bottom: 0px;
+}
+
+.backcolor {
+  background-color: #ecf0f4 !important;
+  background-image: url(../../assets/images/purple1.jpg);
+  /* background-image: url(../../assets/img/a15c320b-c679-4f01-9aab-d6dbb4c383a0.png); */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  color: white !important;
+  text-transform: uppercase;
 }
 .rm-icon-list-inner {
-    width: 1360px;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-end;
+  width: 1360px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
 }
 .rm-icon-list {
-    margin-top: -140px;
+  margin-top: -140px;
 }
 
 .rm-icon {
-    width: 25%;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    color: #fff;
-    box-sizing: border-box;
+  width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
 }
 
 .rm-icon-list .rm-icon {
-    color: #000;
+  color: #000;
 }
 .rm-icon-title {
-    width: 60%;
-    margin: 0 auto;
-    font-weight: 500;
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 500;
 }
 
 ///faqs css
 .rm-faq-list {
-    width: 855px;
-    margin: 0 auto;
-    padding: 30px 25px;
-    background-color: #fff;
-    box-shadow: 0 0 5px 5px rgb(0 0 0 / 4%);
-    margin-bottom: 20px;
+  width: 855px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 5px rgb(0 0 0 / 4%);
+  margin-bottom: 20px;
 }
 
 .rm-heading {
-    text-align: center ;
-    margin-bottom: 80px;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .rm-faq-list .rm-faq-title {
-    color: #4a76fe;
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 16px;
+  color: #4a76fe;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 16px;
 }
 
-@media (max-width: 599px){
-.rm-icon-list-inner  {
-     flex-wrap: wrap ;
-    
-   
+@media (max-width: 599px) {
+  .rm-icon-list-inner {
+    flex-wrap: wrap;
+  }
 }
 
-}
-
-@media (max-width: 599px){
-.rm-icon {
+@media (max-width: 599px) {
+  .rm-icon {
     width: 100%;
     margin-bottom: 50px;
-}}
-
-
-
-
+  }
+}
 
 ///pricing card css//
 // Imports
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 
 // Varibles
-$main-font: 'Roboto',sans-serif;
-$primary-color: #311b92;
+$main-font: "Roboto", sans-serif;
+$primary-color: #7b4fa7;
 $light-gray: #f8f8f8;
 $main-font-color: #808080;
 $main-font-weight: 300;
@@ -106,35 +128,34 @@ body {
 
 // Tables
 .card {
-  border: 0;
+  border: 5px solid indigo;
   border-radius: 0px;
-  -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
-  box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
-  transition: all .3s ease-in-out;
+  -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
   padding: 2.25rem 0;
   position: relative;
-  will-change:transform; 
-  
+  will-change: transform;
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 0%;
     height: 5px;
-    background-color: $primary-color;
+    background-color: transparent;
     transition: 0.5s;
   }
-  
+
   &:hover {
+    border: 5px solid #c7aae4;
     transform: scale(1.05);
-    -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
-    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+    -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
     &:after {
       width: 100%;
-      
     }
-    
   }
   & .card-header {
     background-color: white;
@@ -149,7 +170,7 @@ body {
   }
   & .list-group-item {
     border: 0px;
-    padding: .25rem;
+    padding: 0.25rem;
     color: $main-font-color;
     font-weight: $main-font-weight;
   }
@@ -158,7 +179,7 @@ body {
 // Price
 .display-2 {
   font-size: 7rem;
-  letter-spacing: -.5rem;
+  letter-spacing: -0.5rem;
   & .currency {
     font-size: 2.75rem;
     position: relative;
@@ -176,18 +197,18 @@ body {
 // Buttons
 .btn {
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: $main-font-weight + 200;
   color: lighten($main-font-color, 15%);
   border-radius: 0;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   letter-spacing: 1px;
 }
 
-.btn-gradient { 
+.btn-gradient {
   background-color: #f2f2f2;
-  transition: background .3s ease-in-out;
-  
+  transition: background 0.3s ease-in-out;
+
   &:hover {
     color: white;
     background-color: $primary-color;
@@ -195,14 +216,13 @@ body {
   }
 }
 
-
 .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: calc(var(--bs-gutter-x) * -.5);
-    margin-left: calc(var(--bs-gutter-x) * -.5);
-    margin-top: 15%;
-    text-align: center;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  margin-top: -9%;
+  text-align: center;
 }

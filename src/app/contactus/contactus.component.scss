@@ -1,96 +1,98 @@
 .rm-faq-list {
-    width: 855px;
-    margin: 0 auto;
-    padding: 30px 25px;
-    background-color: #fff;
-    box-shadow: 0 0 5px 5px rgb(0 0 0 / 4%);
-    margin-bottom: 20px;
+  width: 855px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 5px rgb(0 0 0 / 4%);
+  margin-bottom: 20px;
 }
 
 .rm-heading {
-    text-align: center ;
-    margin-bottom: 80px;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .rm-faq-list .rm-faq-title {
-    color: #4a76fe;
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 16px;
+  color: #4a76fe;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 16px;
 }
 
 .content-landing .rst-banner-term .manual-remove-form {
-    background-color: #fff;
-    margin-left: 30px;
-    margin-right: 65px;
-    display: block;
-    min-height: 500px;
-    box-shadow: 0 0 8px 1px rgb(0 0 0 / 4%);
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #fff;
+  margin-left: 30px;
+  margin-right: 65px;
+  display: block;
+  min-height: 500px;
+  box-shadow: 0 0 8px 1px rgb(0 0 0 / 4%);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .content-landing .rst-banner-term .manual-remove-form__header {
-    border-radius: 10px 10px 0 0;
-    background-color: #311b92;
-    color: #fff;
-    font-size: 18px;
-    padding: 20px 35px;
-    font-weight: 600;
-    text-transform: none;
+  border-radius: 10px 10px 0 0;
+  background-color: #7b4fa7;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px 35px;
+  font-weight: 600;
+  text-transform: none;
 }
 
 // input:focus {
-//     border: 1px solid #311b92 !important;
+//     border: 1px solid #7b4fa7 !important;
 //   }
 
-
-.content-landing .rst-banner-term .manual-remove-form input[type=submit] {
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
-    background-color: #58B952;
-    display: block;
-    font-size: 16px;
-    padding: 11px;
-    /* box-shadow: 0 3px #21a271; */
-    border: none;
-    transition: none;
-    user-select: none;
-    transition: .5s;
+.content-landing .rst-banner-term .manual-remove-form input[type="submit"] {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #58b952;
+  display: block;
+  font-size: 16px;
+  padding: 11px;
+  /* box-shadow: 0 3px #21a271; */
+  border: none;
+  transition: none;
+  user-select: none;
+  transition: 0.5s;
 }
-.content-landing .rst-banner-term .manual-remove-form input[type=submit]:hover {
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
-    background-color: #58B952;
-    display: block;
-    font-size: 16px;
-    border-radius: 20px;
-    padding: 11px;
-    /* box-shadow: 0 3px #21a271; */
-    border: none;
-    transition: none;
-    user-select: none;
-    transition: .5s;
+.content-landing
+  .rst-banner-term
+  .manual-remove-form
+  input[type="submit"]:hover {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #58b952;
+  display: block;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 11px;
+  /* box-shadow: 0 3px #21a271; */
+  border: none;
+  transition: none;
+  user-select: none;
+  transition: 0.5s;
 }
 
 .content-container {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .content-landing {
-    position: relative;
-    padding-top: 70px;
-     padding-bottom: 0px; 
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 0px;
 }
 
 .rst-home-blog {
-    background-color: #311b92;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    color: #fff;
+  background-color: #7b4fa7;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: #fff;
 }
