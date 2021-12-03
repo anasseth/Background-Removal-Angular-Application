@@ -1,84 +1,89 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=M+PLUS+2:wght@300&display=swap");
 
 .rst-form-group-choose label {
-  cursor: pointer;
+  cursor        : pointer;
   text-transform: uppercase;
-  font-size: 15px;
-  height: 57px;
-  line-height: 57px;
-  display: inline-block;
-  color: #fff;
-  padding: 0 35px;
-  background: #7b4fa7;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  transition: 0.5s;
+  font-size     : 15px;
+  height        : 57px;
+  line-height   : 57px;
+  display       : inline-block;
+  color         : #fff;
+  padding       : 0 35px;
+  background    : #7b4fa7;
+  margin-bottom : 10px;
+  border-radius : 4px;
+  transition    : 0.5s;
 }
 
 .rst-form-group-choose label:hover {
-  cursor: pointer;
+  cursor        : pointer;
   text-transform: uppercase;
-  font-size: 15px;
-  height: 57px;
-  line-height: 57px;
-  display: inline-block;
-  color: #fff;
-  padding: 0 35px;
-  background: #7b4fa7;
-  margin-bottom: 10px;
-  border-radius: 30px;
-  transition: 0.5s;
-  transform: scale(1.2); /* Equal to scaleX(0.7) scaleY(0.7) */
+  font-size     : 15px;
+  height        : 57px;
+  line-height   : 57px;
+  display       : inline-block;
+  color         : #fff;
+  padding       : 0 35px;
+  background    : #7b4fa7;
+  margin-bottom : 10px;
+  border-radius : 30px;
+  transition    : 0.5s;
+  transform     : scale(1.2);
+  /* Equal to scaleX(0.7) scaleY(0.7) */
 }
 
 .rst-form-group-choose .rst-form-group {
-  border: 1px solid #ffffff;
+  border          : 1px solid #ffffff;
   background-color: #ffffff;
-  border-radius: 20px;
-  padding: 45px 30px 35px 30px;
-  position: relative;
+  border-radius   : 20px;
+  padding         : 45px 30px 35px 30px;
+  position        : relative;
   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow      : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.new-home-content .upload_label_banner > span {
-  margin: 0 6px;
-  font-size: 13px;
-  background-color: #b39ddb;
-  padding: 3px 6px;
-  font-weight: 600;
-  color: #fff;
-  border-radius: 4px;
+.new-home-content .upload_label_banner>span {
+  margin               : 0 6px;
+  font-size            : 13px;
+  background-color     : #b39ddb;
+  padding              : 3px 6px;
+  font-weight          : 600;
+  color                : #fff;
+  border-radius        : 4px;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
+  -moz-border-radius   : 4px;
+  -ms-border-radius    : 4px;
 }
 
 a {
-  color: #7b4fa7;
-  font-weight: bold;
+  color          : #7b4fa7;
+  font-weight    : bold;
   text-decoration: none;
-  transition: 0.5s;
+  transition     : 0.5s;
 }
+
 a:hover {
   background-color: #7b4fa7;
-  border-radius: 20px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  color: #ffffff;
-  font-weight: bold;
+  border-radius   : 20px;
+  padding         : 5px;
+  padding-left    : 10px;
+  padding-right   : 10px;
+  margin-top      : 5px;
+  color           : #ffffff;
+  font-weight     : bold;
   // font-size: 12px;
-  transition: 0.5s;
+  transition      : 0.5s;
 }
+
 p {
-  margin: 0em 0em 1em;
+  margin     : 0em 0em 1em;
   line-height: 30px;
 }
+
 .new-home-content .rst-say-hi .rst-say-hi-content h3 {
   color: #7b4fa7 !important;
 }
+
 .new-home-content .rst-say-hi .rst-say-hi-content {
   // padding-left: 140px;
   // padding-right: 260px;
@@ -87,21 +92,22 @@ p {
 
 .rst-say-hi .hi {
   background-color: #7b4fa7;
-  color: #fff;
-  font-weight: 700;
-  padding: 15px 25px;
-  border-radius: 4px;
-  transition: 0.5s;
+  color           : #fff;
+  font-weight     : 700;
+  padding         : 15px 25px;
+  border-radius   : 4px;
+  transition      : 0.5s;
 }
+
 .rst-say-hi .hi:hover {
   background-color: #7b4fa7;
-  color: #fff;
-  font-weight: 700;
-  padding: 15px 25px;
-  border-radius: 30px;
-  transition: 0.5s;
-  font-size: 16px !important;
-  transform: scale(2) !important;
+  color           : #fff;
+  font-weight     : 700;
+  padding         : 15px 25px;
+  border-radius   : 30px;
+  transition      : 0.5s;
+  font-size       : 16px !important;
+  transform       : scale(2) !important;
 }
 
 .new-home-content .rst-customer-comment {
@@ -110,14 +116,14 @@ p {
 
 .rst-home-blog {
   background-color: #7b4fa7;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  color: #fff;
+  padding-top     : 80px;
+  padding-bottom  : 80px;
+  color           : #fff;
 }
 
 ////////
 .testimonials-clean {
-  color: #313437;
+  color           : #313437;
   background-color: #f8f8f8;
 }
 
@@ -128,29 +134,30 @@ p {
 .msg {
   color: #313437 !important;
 }
+
 .msg:hover {
   color: #ffffff !important;
 }
 
 .testimonials-clean h2 {
-  font-weight: bold;
+  font-weight  : bold;
   margin-bottom: 40px;
-  padding-top: 40px;
-  color: inherit;
+  padding-top  : 40px;
+  color        : inherit;
 }
 
 @media (max-width: 767px) {
   .testimonials-clean h2 {
     margin-bottom: 25px;
-    padding-top: 25px;
-    font-size: 24px;
+    padding-top  : 25px;
+    font-size    : 24px;
   }
 }
 
 .testimonials-clean .intro {
   font-size: 16px;
   max-width: 500px;
-  margin: 0 auto;
+  margin   : 0 auto;
 }
 
 .testimonials-clean .intro p {
@@ -172,65 +179,66 @@ p {
 }
 
 .testimonials-clean .item .box {
-  padding: 30px;
+  padding         : 30px;
   background-color: #fff;
-  position: relative;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: 0.5s;
-  border-radius: 20px;
+  position        : relative;
+  box-shadow      : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition      : 0.5s;
+  border-radius   : 20px;
 }
 
 .testimonials-clean .item .box:hover {
-  padding: 30px;
+  padding         : 30px;
   background-color: #7b4fa7;
-  position: relative;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 20px;
-  transition: 0.5s;
+  position        : relative;
+  box-shadow      : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius   : 20px;
+  transition      : 0.5s;
   //    color: white !important;
 }
+
 .testimonials-clean .item .box:after {
-  content: "";
-  position: absolute;
-  left: 30px;
-  bottom: -24px;
-  width: 0;
-  height: 0;
-  border: 15px solid transparent;
-  border-width: 12px 15px;
+  content         : "";
+  position        : absolute;
+  left            : 30px;
+  bottom          : -24px;
+  width           : 0;
+  height          : 0;
+  border          : 15px solid transparent;
+  border-width    : 12px 15px;
   border-top-color: #fff;
 }
 
 .testimonials-clean .item .author {
-  margin-top: 28px;
+  margin-top  : 28px;
   padding-left: 25px;
 }
 
 .testimonials-clean .item .name {
-  font-weight: bold;
+  font-weight  : bold;
   margin-bottom: 2px;
-  color: inherit;
+  color        : inherit;
 }
 
 .testimonials-clean .item .title {
   font-size: 13px;
-  color: #9da9ae;
+  color    : #9da9ae;
 }
 
 .testimonials-clean .item .description {
-  font-size: 15px;
+  font-size    : 15px;
   margin-bottom: 0;
 }
 
 .testimonials-clean .item img {
-  max-width: 40px;
-  float: left;
+  max-width   : 40px;
+  float       : left;
   margin-right: 12px;
-  margin-top: -5px;
+  margin-top  : -5px;
 }
 
 .rst-banner {
-  padding-top: 111px;
+  padding-top   : 111px;
   padding-bottom: 50px;
 }
 
@@ -240,6 +248,28 @@ p {
 
 .testimonials-clean {
   padding: 50px 0 50px !important;
+}
+
+
+@media (min-width: 871px) and (max-width:991px) {
+  .rst-form-group-choose .rst-form-group {
+
+    width: 830px;
+  }
+
+  .imgbn1 {
+    width: 900px;
+  }
+}
+
+@media (min-width: 769px) and (max-width:991px) {
+  .imgbn1 {
+    width: 80% !important;
+  }
+  ._twentytwenty-container{
+    text-align: center;
+    margin-bottom: 10%;
+  }
 }
 
 // .rst-product-content .rst-product-content-item::before {

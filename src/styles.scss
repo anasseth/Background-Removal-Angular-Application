@@ -5789,6 +5789,14 @@ textarea:focus {
   border-radius: 20px;
 }
 
+
+@media (min-width: 320px) and (max-width:991px) {
+
+  .acc{
+    margin-bottom: 15%;
+  }
+ }
+
 .accordion-button:not(.collapsed) {
   background: #7b4fa7;
   color: #ffffff;
