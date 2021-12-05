@@ -25,4 +25,7 @@ export class HeaderComponent implements OnInit {
   Gotocontactus() {
     this.router.navigate(['/contactus']);
   }
+  Gotohomepage() {
+    this.router.navigate(['']);
+  }
 }

@@ -133,9 +133,9 @@ p {
   color: #313437 !important;
 }
 
-.msg:hover {
-  color: #ffffff !important;
-}
+// .msg:hover {
+//   color: #ffffff !important;
+// }
 
 .testimonials-clean h2 {
   font-weight  : bold;
@@ -157,9 +157,13 @@ p {
   max-width: 500px;
   margin   : 0 auto;
 }
+.intro:hover{
+  color: white !important;
+}
 
 .testimonials-clean .intro p {
   margin-bottom: 0;
+
 }
 
 .testimonials-clean .people {
@@ -185,16 +189,20 @@ p {
   border-radius   : 20px;
 }
 
-.testimonials-clean .item .box:hover {
-  padding         : 30px;
-  background-color: #7b4fa7;
-  position        : relative;
-  box-shadow      : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius   : 20px;
-  transition      : 0.5s;
-  //    color: white !important;
-}
+// .testimonials-clean .item .box {
+//   padding         : 30px;
+//   background-color: #7b4fa7;
+//   position        : relative;
+//   box-shadow      : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//   border-radius   : 20px;
+//   transition      : 0.5s;
+  
+// }
 
+
+// .testimonials-clean .item  .box:hover{
+// color: rgb(255, 0, 0) !important;
+// }
 .testimonials-clean .item .box:after {
   content         : "";
   position        : absolute;
@@ -226,7 +234,9 @@ p {
 .testimonials-clean .item .description {
   font-size    : 15px;
   margin-bottom: 0;
+
 }
+
 
 .testimonials-clean .item img {
   max-width   : 40px;
@@ -246,7 +256,10 @@ p {
 
 .testimonials-clean {
   padding: 50px 0 50px !important;
+  
 }
+
+
 
 
 @media (min-width: 871px) and (max-width:991px) {
