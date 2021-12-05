@@ -150,7 +150,7 @@ body {
 
   &:hover {
     border: 5px solid #c7aae4;
-    border-radius: 20px;
+    // border-radius: 20px;
     transform: scale(1.05);
     -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
     box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
@@ -213,7 +213,7 @@ body {
   &:hover {
     color: white;
     background-color: $primary-color;
-    border-radius: 20px;
+    // border-radius: 20px;
   }
 }
 
