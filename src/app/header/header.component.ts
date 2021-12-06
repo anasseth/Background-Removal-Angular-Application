@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  showSideBar: boolean = false;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  showSideBarMethod() {
+    this.showSideBar = !this.showSideBar
   }
   Gotoprice() {
     this.router.navigate(['/pricing']);
@@ -28,4 +34,8 @@ export class HeaderComponent implements OnInit {
   Gotohomepage() {
     this.router.navigate(['']);
   }
+  Gotouploadimage() {
+    this.router.navigate(['/imageupload']);
+  }
 }
+
