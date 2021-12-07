@@ -23,7 +23,34 @@
             <form method="post" enctype="multipart/form-data" id="form_upload">
                 <div class="rst-form-group-choose ">
                     <div class="rst-form-group rst-form-group-drag">
-                        <div class="rm-upload-message rm-hidden"></div>
+                        <div class="rm-upload-message rm-hidden">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="rm-upload-utilities-item">
+                                            <img src="../../assets/images/upload1.png" alt="" width="244"
+                                                height="180" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="rm-upload-utilities-item">
+                                            <img src="../../assets/images/upload2.png" alt="" width="244"
+                                                height="180" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="rm-upload-utilities-item">
+                                            <img src="../../assets/images/upload3.png" alt="" width="244"
+                                                height="180" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="rst-form-group-button">
                             <label id="rst_choose_upload" for="rm_upload_file">UPLOAD IMAGE</label>
                             <input type="file" class="form-control" id="rm_upload_file" name="rm_file_upload"
@@ -46,6 +73,38 @@
     </div>
 
 </div>
+
+<div class="centr"><button (click)=" showing()" class="process">Payment process</button></div>
+
+<div class="row " *ngIf="show">
+    <div class="col-lg-6">
+        <div class="card1">
+            <h3 class="display-2 bil">
+                <span class="currency">$</span>19<span></span>
+            </h3>
+
+            <div class="card-block bil">
+                <h4 class="card-title">Your Bill</h4>
+                <div class="pt-3">Total 5 images</div>
+                <a href="#" class="btn btn-gradient mt-5">Proceed</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card1">
+            <div class="bil">
+                <!-- <h4>Your total Cost</h4> -->
+                <!-- <input class="inp" placeholder="Full Name"/><br>
+                <input  class="inp"   placeholder="Billing Address"/>
+                
+                <div ><button class="process"> processed</button></div> -->
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 <div class="rm-upload-utilities">
     <div class="container">

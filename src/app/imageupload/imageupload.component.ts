@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageuploadComponent implements OnInit {
 
+  public show: boolean = true
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  showing() {
+    this.show = !this.show
+  }
 }
