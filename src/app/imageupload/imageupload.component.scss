@@ -82,144 +82,131 @@
 
 }
 
-.card1 {
-    border        : 1px solid #ffffff;
-    border-radius : 3px;
-    padding-top   : 20%;
-    // padding-bottom: 0%;
-    margin-left   : 15%;
-    margin-right  : 15%;
-    position     : relative;
-    box-shadow   : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 20px;
-    text-align: center;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    
-}
 
-.bil{
-    transform: translatey(-90px) !important;
-    white-space: nowrap !important;
-}
-.inp{
-    width: 70%;margin-bottom: 20px;margin-top: 20px; padding: 5px;
+* {
+	box-sizing: border-box;
 }
 
 
-
-
-///pricing card css//
-// Imports
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
-
-// Varibles
-$main-font: "Roboto", sans-serif;
-$primary-color: #7b4fa7;
-$light-gray: #f8f8f8;
-$main-font-color: #808080;
-$main-font-weight: 300;
-
-// Basic
 body {
-  background-color: $light-gray;
-  font-family: $main-font;
-  font-weight: $main-font-weight;
+	background-image: linear-gradient(45deg, #7175da, #9790F2);
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
 }
 
-// .row {
-//   min-height: 100vh;
-// }
 
-// Tables
-.card {
-  border: 5px solid indigo;
-  border-radius: 0px;
-  -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
-  box-shadow: 0 3px 0px 0 rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out;
-  padding: 2.25rem 0;
-  position: relative;
-  will-change: transform;
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 5px;
-    background-color: transparent;
-    transition: 0.5s;
-  }
-
-  &:hover {
-    border: 5px solid #c7aae4;
-    // border-radius: 20px;
-    transform: scale(1.05);
-    -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
-    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
-    &:after {
-      width: 100%;
-    }
-  }
-  & .card-header {
-    background-color: white;
-    padding-left: 2rem;
-    border-bottom: 0px;
-  }
-  & .card-title {
-    margin-bottom: 1rem;
-  }
-  & .card-block {
-    padding-top: 0;
-  }
-  & .list-group-item {
-    border: 0px;
-    padding: 0.25rem;
-    color: $main-font-color;
-    font-weight: $main-font-weight;
-  }
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 100%;
+	// margin-top: 100px;
+  // margin-left: 100px;
+	overflow: hidden;
+	width: 550px;
 }
 
-// Price
-.display-2 {
-  font-size: 7rem;
-  letter-spacing: -0.5rem;
-  padding-right: 30px;
-  & .currency {
-    font-size: 2.75rem;
-    position: relative;
-    font-weight: $main-font-weight + 100;
-    top: -45px;
-    letter-spacing: 0px;
-  }
-  & .period {
-    font-size: 1rem;
-    color: lighten($main-font-color, 20%);
-    letter-spacing: 0px;
-  }
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
-// Buttons
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #7b4fa7;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #2A265F;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
 .btn {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-weight: $main-font-weight + 200;
-  color: lighten($main-font-color, 15%);
-  border-radius: 0;
-  padding: 0.75rem 1.25rem;
-  letter-spacing: 1px;
+	background-color: #7b4fa7;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
 }
 
-.btn-gradient {
-  background-color: #f2f2f2;
-  transition: background 0.3s ease-in-out;
+/* SOCIAL PANEL CSS */
 
-  &:hover {
-    color: white;
-    background-color: $primary-color;
-    // border-radius: 20px;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
