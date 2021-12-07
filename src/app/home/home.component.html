@@ -46,11 +46,7 @@
             data-url="https://Bgmoval.ai/upload/"
           >
             <div class="rm-upload-inner">
-              <form
-                method="post"
-                enctype="multipart/form-data"
-                id="form_upload"
-              >
+              <form enctype="multipart/form-data" id="form_upload">
                 <div class="rst-form-group-choose">
                   <div class="rst-form-group rst-form-group-drag rst-free">
                     <div class="rm-upload-message rm-hidden"></div>
@@ -62,6 +58,7 @@
                         id="rm_free_upload_file"
                         name="rm_file_upload"
                         accept="image/png,image/jpg,image/jpeg"
+                        (change)="fileChangeEvent($event)"
                       />
                       <input
                         type="hidden"
