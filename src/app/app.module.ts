@@ -12,6 +12,7 @@ import { TermconditionComponent } from './termcondition/termcondition.component'
 import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, 
+    ReactiveFormsModule,
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  rapidAPI:"https://background-removal.p.rapidapi.com/remove",
+  rapidAPI: "https://background-removal.p.rapidapi.com/remove",
+  removalAI: "https://api.removal.ai/3.0/remove",
+  removalAiToken: "61b2466e309cd1.19710386",
 };
 
 /*

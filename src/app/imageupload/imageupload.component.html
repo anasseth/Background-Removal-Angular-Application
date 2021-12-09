@@ -35,7 +35,13 @@
               >
                 <div class="card-number">
                   <div class="h3 m-0"></div>
-                  <strong>Welcome to Bgmovel</strong>
+                  <strong
+                    >Please don't close the window or browser because otherwise
+                    you will not be able to download the results! No data /
+                    image is stored on our servers - therefore we can not
+                    restore the results and you have to convert them
+                    again.</strong
+                  >
                 </div>
                 <!-- <div class="card-description text-right"><small>92</small><br /><small>7.61%</small>
                                 </div> -->
@@ -63,12 +69,24 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row" *ngIf="filePath && filePath.length > 0">
+                    <div class="col-md-4" *ngFor="let imagePath of filePath">
+                      <div class="rm-upload-utilities-item">
+                        <img
+                          src="https://file.removal.ai/preview/05cbe615-6027-4cf0-bb21-57c3b904e657_IMG_20210915_002002%20(2).png"
+                          alt=""
+                          width="244"
+                          height="180"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
+              <!--  -->
               <div class="rst-form-group-button">
                 <label id="rst_choose_upload" for="rm_upload_file"
-                  >UPLOAD IMAGE</label
+                  >UPLOAD IMAGE ({{ this.imgData.length }})</label
                 >
                 <input
                   type="file"
@@ -111,15 +129,17 @@
       <div class="course">
         <div class="course-preview">
           <h6 style="color: white">Price</h6>
-          <h2 style="color: white">$20</h2>
+          <h2 style="color: white">
+            ${{ this.imgData.length * this.ratePerImage }}
+          </h2>
         </div>
         <div class="course-info">
           <div class="progress-container">
             <div class="progress"></div>
           </div>
-          <h3>5</h3>
+          <h3>{{ this.imgData.length }}</h3>
           <h4>Total images</h4>
-          <button class="btn">Proceed</button>
+          <button class="btn" (click)="convertImages()">Proceed</button>
         </div>
       </div>
     </div>

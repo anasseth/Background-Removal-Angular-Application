@@ -35,6 +35,20 @@ export class RemovalAIService {
       .pipe(catchError(this.errorHandler))
   }
 
+  convertImageUsingRemovalAI(data:any){
+    this.httpOptions = new HttpHeaders({
+      'Rm-Token': environment.removalAiToken,
+    })
+    return this._http.post<any>(
+      environment.removalAI,
+      data,
+      {
+        headers: this.httpOptions
+      }
+    )
+      .pipe(catchError(this.errorHandler))
+  }
+
 
   errorHandler(error: HttpErrorResponse) {
     return throwError(error)

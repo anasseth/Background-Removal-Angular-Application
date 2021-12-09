@@ -44,9 +44,12 @@
                 <div class="rst-form-group-choose">
                   <div class="rst-form-group rst-form-group-drag rst-free">
                     <div class="rm-upload-message rm-hidden"></div>
-                    <div class="rst-form-group-button">
-                      <label for="rm_free_upload_file">CHOOSE A PHOTO</label>
-                      <input
+                    <div
+                      class="rst-form-group-button"
+                      [routerLink]="['/imageupload']"
+                    >
+                      <label for="rm_free_upload_file">Start Coverting</label>
+                      <!-- <input
                         type="file"
                         class="form-control rm-upload-file"
                         id="rm_free_upload_file"
@@ -63,7 +66,7 @@
                         type="hidden"
                         name="_wp_http_referer"
                         value="/"
-                      />
+                      /> -->
                       <span class="drag-image-label"
                         >or Drag and Drop images</span
                       >
