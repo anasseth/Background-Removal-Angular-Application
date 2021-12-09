@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pricing',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pricing.component.scss']
 })
 export class PricingComponent implements OnInit {
-  router: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
- 
+  Gotohomepage() {
+    this.router.navigate(['']);
+  }
 }

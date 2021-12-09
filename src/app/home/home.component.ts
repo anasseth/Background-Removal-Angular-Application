@@ -13,9 +13,8 @@ export class HomeComponent implements OnInit {
   }
   Gotoprice() {
     this.router.navigate(['/pricing']);
-
-
-
   }
-
+  Gotouploadimage() {
+    this.router.navigate(['/imageupload']);
+  }
 }
