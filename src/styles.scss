@@ -5760,7 +5760,7 @@ textarea:focus {
   border: 2px solid #7b4fa7 !important;
   outline: none;
   transition: 0.2s;
-  border-radius: 20px !important;
+  // border-radius: 20px !important;
 }
 // .fa-twitter:before {
 //     content: "\f099";
@@ -5788,6 +5788,14 @@ textarea:focus {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 20px;
 }
+
+
+@media (min-width: 320px) and (max-width:991px) {
+
+  .acc{
+    margin-bottom: 15%;
+  }
+ }
 
 .accordion-button:not(.collapsed) {
   background: #7b4fa7;

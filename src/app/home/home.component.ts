@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   imageError!: any;
   isImageSaved!: boolean;
   cardImageBase64!: any;
+  filePath!: string;
 
   constructor(
     private router: Router,
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
       // }
       const reader = new FileReader();
       reader.onload = (e: any) => {
+        this.filePath = reader.result as string;
         const image = new Image();
         image.src = e.target.result;
         image.onload = (rs: any) => {
@@ -67,21 +69,22 @@ export class HomeComponent implements OnInit {
             const imgBase64Path = e.target.result;
             this.cardImageBase64 = imgBase64Path;
             this.isImageSaved = true;
-            // console.log("Image Base 64 Path", imgBase64Path)
+
+            console.log("Base URL Results : ", this.filePath)
             // this.previewImagePath = imgBase64Path;
-            this._BackgroundRemovingService.convertImageUsingFreeRapidAPI(
-              "image_url=https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80&output_format=base64",
-            ).subscribe(
-              data => {
-                console.log(data.response.image_base64)
-              }
-            )
+            // this._BackgroundRemovingService.convertImageUsingFreeRapidAPI(
+            //   "image_url=https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80&output_format=base64",
+            // ).subscribe(
+            //   data => {
+            //     console.log(data.response.image_base64)
+            //   }
+            // )
 
             return;
           }
         };
       };
-      reader.readAsDataURL(fileInput.target.files[0]);
+      console.log(reader.readAsDataURL(fileInput.target.files[0]))
       return;
     }
     else {
@@ -93,7 +96,9 @@ export class HomeComponent implements OnInit {
     this.cardImageBase64 = null;
     this.isImageSaved = false;
   }
-
+  Gotouploadimage() {
+    this.router.navigate(['/imageupload']);
+  }
 }
 
 

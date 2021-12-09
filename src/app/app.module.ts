@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { TermconditionComponent } from './termcondition/termcondition.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ImageuploadComponent } from './imageupload/imageupload.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     HomeComponent,
     PrivacypolicyComponent,
     TermconditionComponent,
-    ContactusComponent
+    ContactusComponent,
+    ImageuploadComponent
   ],
   imports: [
     BrowserModule,
