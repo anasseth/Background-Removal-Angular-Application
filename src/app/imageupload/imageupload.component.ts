@@ -15,4 +15,7 @@ export class ImageuploadComponent implements OnInit {
   showing() {
     this.show = !this.show
   }
+
+
+  
 }
