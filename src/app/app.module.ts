@@ -11,6 +11,7 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
 import { TermconditionComponent } from './termcondition/termcondition.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ImageuploadComponent } from './imageupload/imageupload.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
