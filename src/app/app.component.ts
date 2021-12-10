@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Imgageremover';
 
 
-  constructor(  private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService) { }
   ngOnInit() {
     /** spinner starts on init */
     this.spinner.show();
@@ -18,6 +18,6 @@ export class AppComponent {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 2000);
+    }, 5000);
   }
 }

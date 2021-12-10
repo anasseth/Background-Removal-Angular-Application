@@ -14,8 +14,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ImageuploadComponent implements OnInit {
 
   filePath: any = [];
+  showDownloadButton: boolean = false;
+  downloadUrl: any = [];
   myForm!: FormGroup;
-  public show: boolean = true
+  public show2: boolean = true
   imgData: any = [];
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean = false;
@@ -29,12 +31,12 @@ export class ImageuploadComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
   constructor(public fb: FormBuilder,
-    public _BackgroundRemovingService: RemovalAIService,private modalService: ModalManager, private _snackBar: MatSnackBar, private spinner: NgxSpinnerService) { 
-      this.myForm = this.fb.group({
-        img: [null],
-        filename: ['']
-      })
-    }
+    public _BackgroundRemovingService: RemovalAIService, private modalService: ModalManager, private _snackBar: MatSnackBar, private spinner: NgxSpinnerService) {
+    this.myForm = this.fb.group({
+      img: [null],
+      filename: ['']
+    })
+  }
 
   ngOnInit(): void {
     this.initConfig();
@@ -133,7 +135,8 @@ export class ImageuploadComponent implements OnInit {
 
   convertImages() {
     this.showLoader = true;
-    if (this.convertingImageCount < this.imgData.length - 1) {
+    this.spinner.show()
+    if (this.convertingImageCount < this.imgData.length) {
       var imageData = new FormData();
       imageData.append("image_file", this.imgData[this.convertingImageCount], this.filePath[this.convertingImageCount].name);
       imageData.append("image_url", "");
@@ -141,6 +144,7 @@ export class ImageuploadComponent implements OnInit {
         data => {
           console.log("Image Data Showing")
           console.log(data)
+          this.downloadUrl.push(data.preview_demo)
         },
         err => {
           alert("Server Error: Conversion Failed !")
@@ -153,8 +157,11 @@ export class ImageuploadComponent implements OnInit {
     else {
       this.showLoader = false;
       this.convertingImageCount = 0;
+      this.showDownloadButton = true;
+      this.spinner.hide();
     }
   }
+
   openModal() {
     this.modalRef = this.modalService.open(this.myModal, {
       size: "md",
@@ -174,7 +181,7 @@ export class ImageuploadComponent implements OnInit {
   }
 
   openSnackBar() {
-    this._snackBar.open('Please upload', 'Close', {
+    this._snackBar.open('Please Upload an Image', 'Close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
       duration: 2000,
