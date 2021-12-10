@@ -17,6 +17,8 @@ export class ImageuploadComponent implements OnInit {
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean = false;
   ratePerImage: any = 1.2;
+  convertingImageCount: number = 0;
+  showLoader: boolean = false;
 
   constructor(
     public fb: FormBuilder,
@@ -124,16 +126,27 @@ export class ImageuploadComponent implements OnInit {
   }
 
   convertImages() {
-    var imageData = new FormData();
-    imageData.append("image_file", this.imgData[0], this.filePath[0].name);
-    imageData.append("image_url", "");
-
-    this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
-      data => {
-        console.log("Image Data Showing")
-        console.log(data)
-      }
-    )
+    this.showLoader = true;
+    if (this.convertingImageCount < this.imgData.length - 1) {
+      var imageData = new FormData();
+      imageData.append("image_file", this.imgData[this.convertingImageCount], this.filePath[this.convertingImageCount].name);
+      imageData.append("image_url", "");
+      this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
+        data => {
+          console.log("Image Data Showing")
+          console.log(data)
+        },
+        err => {
+          alert("Server Error: Conversion Failed !")
+        }, () => {
+          this.convertingImageCount = this.convertingImageCount + 1;
+          this.convertImages();
+        }
+      )
+    }
+    else {
+      this.showLoader = false;
+      this.convertingImageCount = 0;
+    }
   }
-
 }
