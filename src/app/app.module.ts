@@ -11,6 +11,7 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
 import { TermconditionComponent } from './termcondition/termcondition.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
+import { ModalModule } from 'ngb-modal';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ImageuploadComponent } from './imageupload/imageupload.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

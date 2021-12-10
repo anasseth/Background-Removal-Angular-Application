@@ -1,4 +1,4 @@
-<div style="overflow-x: hidden !important; ">
+<div class="over">
     <div class="rm-upload-process-content rm-hidden rm-upload-container page-template-template-general">
         <div class="rm-upload-process-top">
             <!-- <div class="rm-uploading">
@@ -29,7 +29,8 @@
                         <div class="card card-purple-pink text-white">
                             <div class="card-body d-flex justify-content-between align-items-end">
                                 <div class="card-number">
-                                    <div class="h3 m-0"></div><strong>Welcome to Bgmovel</strong>
+                                    <div class="h3 m-0"></div><strong>Please do not refresh the page other wise payment
+                                        would be lost</strong>
                                 </div>
                                 <!-- <div class="card-description text-right"><small>92</small><br /><small>7.61%</small>
                                 </div> -->
@@ -89,7 +90,7 @@
             <div class="rm-upload-process-bottom-inner">
 
             </div>
-            <p style="margin-top: 20px; font-size:13px; text-align:center; color: #949494">Please download your files.
+            <p class="msg">Please download your files.
                 They
                 will be
                 discarded automatically after 60 minutes.</p>
@@ -103,8 +104,8 @@
         <div class=" col-lg-4 mt-5" *ngIf="show">
             <div class="course">
                 <div class="course-preview">
-                    <h6 style="color: white;">Price</h6>
-                    <h2 style="color: white;">$20</h2>
+                    <h6 class="col">Price</h6>
+                    <h2 class="col">$20</h2>
                 </div>
                 <div class="course-info">
                     <div class="progress-container">
@@ -113,7 +114,7 @@
                     </div>
                     <h3>5</h3>
                     <h4>Total images</h4>
-                    <button class="btn">Proceed</button>
+                    <button class="btn" (click)="openModal()">Proceed</button>
                 </div>
             </div>
         </div>
@@ -204,4 +205,18 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="row">
+    <modal #myModal>
+        <modal-header>
+            <h3>Paypal</h3>
+        </modal-header>
+        <modal-content>
+            Welcome to Paypal
+        </modal-content>
+        <modal-footer>
+            <button class="btn1 btn-primary" (click)="closeModal()">close</button>
+        </modal-footer>
+    </modal>
 </div>
