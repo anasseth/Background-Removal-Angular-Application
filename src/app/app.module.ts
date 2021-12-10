@@ -13,6 +13,12 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ModalModule } from 'ngb-modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     PrivacypolicyComponent,
     TermconditionComponent,
     ContactusComponent,
-    ImageuploadComponent
+    ImageuploadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,11 @@ import { NgxPayPalModule } from 'ngx-paypal';
     FormsModule, 
     ReactiveFormsModule,
     NgxPayPalModule,
+    ModalModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

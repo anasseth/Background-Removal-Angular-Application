@@ -1,6 +1,6 @@
 // @import "../node_modules/font-awesome/scss/font-awesome.scss";
 
-
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 // original bY Afnan = #311b92
 
 #header {
@@ -5818,3 +5818,12 @@ textarea:focus {
 // .fa-twitter:before {
 //     content: "\f099";
 // }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.blue-snackbar {
+  background: #fd2b2b !important;
+  color: whitesmoke;
+  }
