@@ -108,7 +108,6 @@ export class ImageuploadComponent implements OnInit {
     //   },
     // };
     this.payPalConfig = {
-      currency: "EUR",
       clientId: "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
       createOrderOnClient: (data) =>
         <ICreateOrderRequest>{
@@ -116,23 +115,23 @@ export class ImageuploadComponent implements OnInit {
           purchase_units: [
             {
               amount: {
-                currency_code: "EUR",
-                value: "9.99",
+                currency_code: "USD",
+                value: (this.ratePerImage * this.imgData.length).toString(),
                 breakdown: {
                   item_total: {
-                    currency_code: "EUR",
-                    value: "9.99"
+                    currency_code: "USD",
+                    value: (this.ratePerImage * this.imgData.length).toString()
                   }
                 }
               },
               items: [
                 {
-                  name: "Enterprise Subscription",
-                  quantity: "1",
+                  name: "Background Removal of Image",
+                  quantity: this.imgData.length,
                   category: "DIGITAL_GOODS",
                   unit_amount: {
-                    currency_code: "EUR",
-                    value: "9.99"
+                    currency_code: "USD",
+                    value: (this.ratePerImage * this.imgData.length).toString()
                   }
                 }
               ]
@@ -227,7 +226,10 @@ export class ImageuploadComponent implements OnInit {
             this.downloadUrl.push(data.preview_demo)
           },
           err => {
-            this.openSnackBar("Server Error: Conversion Failed !")
+            this.openSnackBar("Server Error: Conversion Failed !");
+            this.showLoader = false;
+            this.spinner.hide();
+            this.closeModal();
           }, () => {
             this.convertingImageCount = this.convertingImageCount + 1;
             this.convertImages();
@@ -240,6 +242,7 @@ export class ImageuploadComponent implements OnInit {
         this.convertingImageCount = 0;
         this.showDownloadButton = true;
         this.spinner.hide();
+        this.closeModal();
       }
     }
     else {
@@ -276,9 +279,14 @@ export class ImageuploadComponent implements OnInit {
     this._snackBar.open(message, 'Close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      duration: 2000,
+      duration: 4000,
       panelClass: ['blue-snackbar']
     });
+  }
+
+  removeImage(i: any) {
+    this.imgData.splice(i, 1)
+    this.filePath.splice(i, 1)
   }
 
 }

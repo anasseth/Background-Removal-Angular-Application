@@ -55,30 +55,36 @@
                 <div class="container">
                   <div class="row" *ngIf="filePath && filePath.length > 0">
                     <div
-                      class="col-md-4"
+                      class="col-md-4 imgcard"
                       *ngFor="let imagePath of filePath; let i = index"
                     >
+                      <div class="cancle" (click)="removeImage(i)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </div>
                       <div class="rm-upload-utilities-item">
                         <img
                           [src]="imagePath"
                           alt=""
                           width="244"
                           height="180"
+                          class="imageUploaded"
                         />
                       </div>
                       <a
+                        class="download"
                         [href]="downloadUrl[i]"
                         *ngIf="showDownloadButton == true"
-                        >Download</a
+                        ><i class="fa fa-download" aria-hidden="true"></i>
+                        Download</a
                       >
                     </div>
                   </div>
                 </div>
               </div>
-              <!--  -->
               <div class="rst-form-group-button">
                 <label id="rst_choose_upload" for="rm_upload_file"
-                  >UPLOAD IMAGE ({{ this.imgData.length }})</label
+                  ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
+                  IMAGE ({{ this.imgData.length }})</label
                 >
                 <input
                   type="file"
@@ -89,6 +95,14 @@
                   accept="image/png|image/jpg|image/jpeg"
                   [disabled]="this.imgData.length == 3"
                 />
+                <label
+                  class="con"
+                  (click)="openModal()"
+                  *ngIf="this.imgData.length > 0"
+                  ><i class="fa fa-refresh" aria-hidden="true"></i> Start
+                  Conversion</label
+                >
+
                 <span>or Drag and Drop images</span>
               </div>
             </div>
@@ -114,31 +128,6 @@
   </div>
 
   <div class="row topflex">
-    <div class="centr">
-      <button (click)="showing()" class="process">Payment process</button>
-    </div>
-
-    <div class="row topflex topflexmedia">
-      <div class="col-12 col-sm-6 col-md-4 mt-5" *ngIf="show">
-        <div class="course">
-          <div class="course-preview">
-            <h6 style="color: white">Price</h6>
-            <h2 style="color: white">
-              ${{ (this.imgData.length * this.ratePerImage).toFixed(2) }}
-            </h2>
-          </div>
-          <div class="course-info">
-            <div class="progress-container">
-              Removing Background of {{ this.imgData.length }} Images
-            </div>
-            <h3>{{ this.imgData.length }}</h3>
-            <h4>Total images</h4>
-            <button class="btn" (click)="openModal()">Proceed</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="rm-upload-utilities">
       <div class="container">
         <div class="row">
@@ -200,7 +189,7 @@
         </modal-header>
         <modal-content>
           <div class="row topflex topflexmedia" *ngIf="show">
-            <div class="col-12 col-sm-6 col-md-4 mt-5 setFullWidth">
+            <div class="col-12 col-sm-6 col-md-4 fullCardWidth">
               <div class="course">
                 <div class="course-preview">
                   <h6 style="color: white">Price</h6>

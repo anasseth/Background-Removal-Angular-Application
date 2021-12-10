@@ -60,12 +60,11 @@
   background: #7b4fa7;
   margin-bottom: 10px;
   margin-top: 50px;
-  border-radius: 4px;
+  border-radius: 40px;
 }
 
 .rst-form-group-choose .rst-form-group {
   border: 1px solid #ffffff;
-  background-color: white;
   border-radius: 3px;
   padding: 45px 30px 35px 30px;
   position: relative;
@@ -105,7 +104,7 @@ body {
 .course {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   max-width: 100%;
   // margin-top: 100px;
@@ -297,6 +296,120 @@ body {
   justify-content: center;
 }
 
-.setFullWidth {
+.download {
+  background-color: #36ac45;
+  border: 0;
+  color: white;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 12px;
+}
+
+.imgcard {
+  background-color: #f6f7fa;
+  // padding-left    : 2%;
+  // padding-right   : 2%;
+  padding-bottom: 2%;
+  padding-top: 3%;
+  width: 350px;
+  height: fit-content;
+  margin-left: 1%;
+  margin-bottom: 2%;
+  // box-shadow         : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.download {
+  display: block;
+  background-color: #36ac45;
+  border: 0;
+  color: white;
+  border-radius: 20px;
+  margin-top: 10px !important;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 12px;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.imgcard {
+  background-color: #f6f7fa;
+  // padding-left    : 2%;
+  // padding-right   : 2%;
+  padding-bottom: 2%;
+  padding-top: 3%;
+  width: 350px;
+  height: fit-content;
+  margin-left: 1%;
+  margin-bottom: 2%;
+  // box-shadow         : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cancle {
+  color: red;
+  float: right;
+  font-size: 20px;
+  transform: translateY(-20px);
+}
+
+.fullCardWidth {
   width: 90%;
+}
+
+img {
+  max-width: 100%;
+  // height: ;
+  border-radius: 20px;
+}
+
+.imageUploaded {
+  border: 2px solid purple;
+}
+
+.fa-picture-o {
+  padding-right: 5px;
+}
+
+.fa-refresh {
+  padding-right: 5px;
+}
+
+.con {
+  background-color: rgb(0, 81, 255) !important;
+  margin-left: 2%;
+  border-radius: 40px !important;
+}
+
+.cancle {
+  color: red;
+  float: right;
+  font-size: 20px;
+  transform: translateY(-20px);
+}
+
+img {
+  max-width: 100%;
+  // height: ;
+  border-radius: 20px;
+}
+
+.fa-picture-o {
+  padding-right: 5px;
+}
+
+.fa-refresh {
+  padding-right: 5px;
+}
+
+.con {
+  background-color: rgb(0, 81, 255) !important;
+  margin-left: 2%;
+  border-radius: 40px !important;
 }
