@@ -13,8 +13,9 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { ModalModule } from 'ngb-modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     PrivacypolicyComponent,
     TermconditionComponent,
     ContactusComponent,
-    ImageuploadComponent
+    ImageuploadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

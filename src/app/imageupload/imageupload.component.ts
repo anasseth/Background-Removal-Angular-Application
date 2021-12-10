@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ModalManager } from 'ngb-modal';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-imageupload',
@@ -13,7 +14,7 @@ export class ImageuploadComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
-  constructor(private modalService: ModalManager, private _snackBar: MatSnackBar) { }
+  constructor(private modalService: ModalManager, private _snackBar: MatSnackBar, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
