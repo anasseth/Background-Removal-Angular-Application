@@ -173,17 +173,17 @@ body {
 }
 
 .btn {
-	background-color: #7b4fa7;
-	border          : 0;
-	border-radius   : 50px;
-	// box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	color           : #fff;
-	font-size       : 16px;
-	padding         : 9px 25px;
-	position        : absolute;
-	bottom          : 30px;
-	right           : 30px;
-	letter-spacing  : 1px;
+  background-color: #7b4fa7;
+  border: 0;
+  border-radius: 50px;
+  // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 9px 20px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  letter-spacing: 1px;
 }
 
 .topflex {
@@ -191,15 +191,13 @@ body {
   justify-content: center;
 }
 
-@media (min-width: 300px) and (max-width:575px) {
-	.topflexmedia {
-	
-		margin-left: 2% !important;	
-		margin-right: 2% !important;
-	
-	}
+@media (min-width: 300px) and (max-width: 575px) {
+  .topflexmedia {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
   }
-  
+}
+
 /// banner ui///
 
 body {
@@ -225,59 +223,60 @@ body {
 // 	box-shadow: 0 5px 20px rgba(#29F499,.3);
 // }
 .card-purple-pink {
-	background: linear-gradient(45deg, rgba(#ff3f3f, 1) 0%, rgba(#ff3f3f, 1) 100%);
-	box-shadow: 0 5px 20px rgba(#FA81E8, .3);
+  background: linear-gradient(
+    45deg,
+    rgba(#ff3f3f, 1) 0%,
+    rgba(#ff3f3f, 1) 100%
+  );
+  box-shadow: 0 5px 20px rgba(#fa81e8, 0.3);
 }
 
 .card {
-	border       : 0;
-	border-radius: 10px;
-	letter-spacing  : 1px !important;
-	// padding: 15px 20px;
-
+  border: 0;
+  border-radius: 10px;
+  letter-spacing: 1px !important;
+  // padding: 15px 20px;
 }
-
 
 .btn1 {
-	background-color: #ff0000;
-	border          : 0;
-	border-radius   : 50px;
-	// box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	color           : #fff;
-	font-size       : 16px;
-	padding         : 9px 25px;
+  background-color: #ff0000;
+  border: 0;
+  border-radius: 50px;
+  // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 9px 25px;
 
-	letter-spacing  : 1px;
-margin-top: 50px !important;
+  letter-spacing: 1px;
+  margin-top: 50px !important;
 }
 
-.msg{
-	margin-top: 20px; font-size:13px; text-align:center; color: #949494
+.msg {
+  margin-top: 20px;
+  font-size: 13px;
+  text-align: center;
+  color: #949494;
 }
 
-.col{
-	color: white;
+.col {
+  color: white;
 }
 
-
-.over{
-	overflow-x: hidden !important;
+.over {
+  overflow-x: hidden !important;
 }
-
 
 .blue-snackbar {
-	background: #2196F3 !important;
-  }
+  background: #2196f3 !important;
+}
 
-  .cen{
-	  margin-top: 20px;
-	text-align: center ;
-  }
+.cen {
+  margin-top: 20px;
+  text-align: center;
+}
 
-
-  .cen2{
-	margin-top: 20px;
-	display: flex;
-	justify-content: center;
-
-  }
+.cen2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

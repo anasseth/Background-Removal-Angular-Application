@@ -17,7 +17,7 @@ export class ImageuploadComponent implements OnInit {
   showDownloadButton: boolean = false;
   downloadUrl: any = [];
   myForm!: FormGroup;
-  public show2: boolean = true
+  public show2: boolean = false;
   imgData: any = [];
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean = false;
@@ -43,63 +43,130 @@ export class ImageuploadComponent implements OnInit {
   }
 
   private initConfig(): void {
+    // this.payPalConfig = {
+    //   clientId: 'AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR',
+    //   createOrderOnClient: (data) => <ICreateOrderRequest>{
+    //     intent: 'CAPTURE',
+    //     purchase_units: [
+    //       {
+    //         amount: {
+    //           currency_code: 'USD',
+    //           value: (this.imgData.length * this.ratePerImage).toString(),
+    //           breakdown: {
+    //             item_total: {
+    //               currency_code: 'USD',
+    //               value: (this.imgData.length * this.ratePerImage).toString()
+    //             }
+    //           }
+    //         },
+    //         items: [
+    //           {
+    //             name: 'Background Removal of Images',
+    //             quantity: this.imgData.length,
+    //             category: 'DIGITAL_GOODS',
+    //             unit_amount: {
+    //               currency_code: 'USD',
+    //               value: (this.imgData.length * this.ratePerImage).toString(),
+    //             },
+    //           }
+    //         ]
+    //       }
+    //     ]
+    //   },
+    //   advanced: {
+    //     commit: 'true'
+    //   },
+    //   style: {
+    //     label: 'paypal',
+    //     layout: 'vertical'
+    //   },
+    //   onApprove: (data, actions) => {
+    //     console.log('onApprove - transaction was approved, but not authorized', data, actions);
+    //     actions.order.get().then((details: any) => {
+    //       console.log('onApprove - you can get full order details inside onApprove: ', details);
+    //     });
+    //   },
+    //   onClientAuthorization: (data) => {
+    //     console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+    //     this.showSuccess = true;
+    //   },
+    //   onCancel: (data, actions) => {
+    //     console.log('OnCancel', data, actions);
+    //   },
+    //   onError: err => {
+    //     console.log('OnError', err);
+    //   },
+    //   onClick: (data, actions) => {
+    //     console.log('onClick', data, actions);
+    //   },
+    // };
     this.payPalConfig = {
-      currency: 'EUR',
-      clientId: 'sb',
-      createOrderOnClient: (data) => <ICreateOrderRequest>{
-        intent: 'CAPTURE',
-        purchase_units: [
-          {
-            amount: {
-              currency_code: 'USD',
-              value: (this.imgData.length * this.ratePerImage).toString(),
-              breakdown: {
-                item_total: {
-                  currency_code: 'USD',
-                  value: (this.imgData.length * this.ratePerImage).toString()
+      currency: "EUR",
+      clientId: "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
+      createOrderOnClient: (data) =>
+        <ICreateOrderRequest>{
+          intent: "CAPTURE",
+          purchase_units: [
+            {
+              amount: {
+                currency_code: "EUR",
+                value: "9.99",
+                breakdown: {
+                  item_total: {
+                    currency_code: "EUR",
+                    value: "9.99"
+                  }
                 }
-              }
-            },
-            items: [
-              {
-                name: 'Background Removal of Images',
-                quantity: this.imgData.length,
-                category: 'DIGITAL_GOODS',
-                unit_amount: {
-                  currency_code: 'USD',
-                  value: (this.imgData.length * this.ratePerImage).toString(),
-                },
-              }
-            ]
-          }
-        ]
-      },
+              },
+              items: [
+                {
+                  name: "Enterprise Subscription",
+                  quantity: "1",
+                  category: "DIGITAL_GOODS",
+                  unit_amount: {
+                    currency_code: "EUR",
+                    value: "9.99"
+                  }
+                }
+              ]
+            }
+          ]
+        },
       advanced: {
-        commit: 'true'
+        commit: "true"
       },
       style: {
-        label: 'paypal',
-        layout: 'vertical'
+        label: "paypal",
+        layout: "vertical"
       },
       onApprove: (data, actions) => {
-        console.log('onApprove - transaction was approved, but not authorized', data, actions);
+        console.log(
+          "onApprove - transaction was approved, but not authorized",
+          data,
+          actions
+        );
         actions.order.get().then((details: any) => {
-          console.log('onApprove - you can get full order details inside onApprove: ', details);
+          console.log(
+            "onApprove - you can get full order details inside onApprove: ",
+            details
+          );
         });
       },
-      onClientAuthorization: (data) => {
-        console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-        this.showSuccess = true;
+      onClientAuthorization: data => {
+        console.log(
+          "onClientAuthorization - you should probably inform your server about completed transaction at this point",
+          data
+        );
       },
       onCancel: (data, actions) => {
-        console.log('OnCancel', data, actions);
+        console.log("OnCancel", data, actions);
       },
       onError: err => {
-        console.log('OnError', err);
+        console.log("OnError", err);
       },
       onClick: (data, actions) => {
-        console.log('onClick', data, actions);
-      },
+        console.log("onClick", data, actions);
+      }
     };
   }
 
@@ -108,25 +175,30 @@ export class ImageuploadComponent implements OnInit {
   }
 
   imagePreview(e: Event) {
-    var file: any = e.target as HTMLInputElement;
-    file = file.files[0]
-    this.myForm.patchValue({
-      img: file
-    });
-    this.imgData.push(file)
+    if (this.imgData.length < 4) {
+      var file: any = e.target as HTMLInputElement;
+      file = file.files[0]
+      this.myForm.patchValue({
+        img: file
+      });
+      this.imgData.push(file)
 
-    this.myForm.get('img')?.updateValueAndValidity()
+      this.myForm.get('img')?.updateValueAndValidity()
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.filePath.push(reader.result as string);
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.filePath.push(reader.result as string);
+      }
+      reader.readAsDataURL(file)
+
+      this.myForm = this.fb.group({
+        img: [null],
+        filename: ['']
+      })
     }
-    reader.readAsDataURL(file)
-
-    this.myForm = this.fb.group({
-      img: [null],
-      filename: ['']
-    })
+    else {
+      this.openSnackBar("You Cannot Upload More Then 3 Images")
+    }
   }
 
   submit() {
@@ -134,31 +206,36 @@ export class ImageuploadComponent implements OnInit {
   }
 
   convertImages() {
-    this.showLoader = true;
-    this.spinner.show()
-    if (this.convertingImageCount < this.imgData.length) {
-      var imageData = new FormData();
-      imageData.append("image_file", this.imgData[this.convertingImageCount], this.filePath[this.convertingImageCount].name);
-      imageData.append("image_url", "");
-      this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
-        data => {
-          console.log("Image Data Showing")
-          console.log(data)
-          this.downloadUrl.push(data.preview_demo)
-        },
-        err => {
-          alert("Server Error: Conversion Failed !")
-        }, () => {
-          this.convertingImageCount = this.convertingImageCount + 1;
-          this.convertImages();
-        }
-      )
+    if (this.imgData.length < 4) {
+      this.showLoader = true;
+      this.spinner.show()
+      if (this.convertingImageCount < this.imgData.length) {
+        var imageData = new FormData();
+        imageData.append("image_file", this.imgData[this.convertingImageCount], this.filePath[this.convertingImageCount].name);
+        imageData.append("image_url", "");
+        this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
+          data => {
+            console.log("Image Data Showing")
+            console.log(data)
+            this.downloadUrl.push(data.preview_demo)
+          },
+          err => {
+            this.openSnackBar("Server Error: Conversion Failed !")
+          }, () => {
+            this.convertingImageCount = this.convertingImageCount + 1;
+            this.convertImages();
+          }
+        )
+      }
+      else {
+        this.showLoader = false;
+        this.convertingImageCount = 0;
+        this.showDownloadButton = true;
+        this.spinner.hide();
+      }
     }
     else {
-      this.showLoader = false;
-      this.convertingImageCount = 0;
-      this.showDownloadButton = true;
-      this.spinner.hide();
+      this.openSnackBar("You Cannot Upload More Then 3 Images")
     }
   }
 
@@ -174,14 +251,15 @@ export class ImageuploadComponent implements OnInit {
       closeOnOutsideClick: true,
       backdropClass: "modal-backdrop"
     })
-  }
-  closeModal() {
-    this.modalService.close(this.modalRef);
-    //or this.modalRef.close();
+    this.show2 = true
   }
 
-  openSnackBar() {
-    this._snackBar.open('Please Upload an Image', 'Close', {
+  closeModal() {
+    this.modalService.close(this.modalRef);
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'Close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
       duration: 2000,
