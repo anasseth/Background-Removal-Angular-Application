@@ -259,11 +259,17 @@ export class ImageuploadComponent implements OnInit {
       closeOnOutsideClick: true,
       backdropClass: "modal-backdrop"
     })
-    this.show2 = true
+    // this.show2 = true
   }
 
   closeModal() {
     this.modalService.close(this.modalRef);
+    this.show2 = false
+  }
+
+  showPaymentOption() {
+    this.show2 = !this.show2;
+    this.show = !this.show;
   }
 
   openSnackBar(message: string) {

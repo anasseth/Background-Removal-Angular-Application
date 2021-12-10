@@ -129,7 +129,7 @@
           </div>
           <div class="course-info">
             <div class="progress-container">
-              <div class="progress"></div>
+              Removing Background of {{ this.imgData.length }} Images
             </div>
             <h3>{{ this.imgData.length }}</h3>
             <h4>Total images</h4>
@@ -196,13 +196,35 @@
     <div class="row">
       <modal #myModal>
         <modal-header>
-          <h3>Paypal</h3>
+          <h3>Finalize Billing</h3>
         </modal-header>
         <modal-content>
+          <div class="row topflex topflexmedia" *ngIf="show">
+            <div class="col-12 col-sm-6 col-md-4 mt-5 setFullWidth">
+              <div class="course">
+                <div class="course-preview">
+                  <h6 style="color: white">Price</h6>
+                  <h2 style="color: white">
+                    ${{ (this.imgData.length * this.ratePerImage).toFixed(2) }}
+                  </h2>
+                </div>
+                <div class="course-info">
+                  <div class="progress-container">
+                    Removing Background of {{ this.imgData.length }} Images
+                  </div>
+                  <h3>{{ this.imgData.length }}</h3>
+                  <h4>Total images</h4>
+                  <button class="btn" (click)="showPaymentOption()">
+                    Proceed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <ngx-paypal [config]="payPalConfig" *ngIf="show2"></ngx-paypal>
         </modal-content>
         <modal-footer>
-          <button class="btn1 btn-success" (click)="convertImages()">
+          <button class="btn1 btn2 btn-success" (click)="convertImages()">
             Convert Image
           </button>
           <button class="btn1 btn-success" (click)="closeModal()">close</button>

@@ -261,7 +261,10 @@ body {
   padding: 9px 25px;
 
   letter-spacing: 1px;
-  margin-top: 50px !important;
+}
+
+.btn2 {
+  background-color: #149f03;
 }
 
 .msg {
@@ -292,4 +295,8 @@ body {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+.setFullWidth {
+  width: 90%;
 }
