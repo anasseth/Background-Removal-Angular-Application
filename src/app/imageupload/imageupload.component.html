@@ -5,11 +5,14 @@
       page-template-template-general
     "
   >
+    <p class="ImageUploadMainText">
+      Remove The Background From Your Image Instantly
+    </p>
     <div class="rm-upload-process-top">
-      <div class="container-fluid">
+      <div class="container-fluid" *ngIf="showSuccessMsg == false">
         <div class="row mb-5 topflex">
           <div class="col-12 col-sm-6 col-md-9">
-            <div class="card card-purple-pink text-white">
+            <div class="card card-alert text-white">
               <div
                 class="card-body d-flex justify-content-between align-items-end"
               >
@@ -19,6 +22,24 @@
                   you will not be able to download the results! No data / image
                   is stored on our servers - therefore we can not restore the
                   results and you have to convert them again.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid" *ngIf="showSuccessMsg == true">
+        <div class="row mb-5 topflex">
+          <div class="col-12 col-sm-6 col-md-9">
+            <div class="card card-success text-white">
+              <div
+                class="card-body d-flex justify-content-between align-items-end"
+              >
+                <div class="card-number">
+                  <div class="h3 m-0"></div>
+                  Your Images Has Been Successfully Converted. Please Download
+                  it Using the Download Button Below Each Image
                 </div>
               </div>
             </div>

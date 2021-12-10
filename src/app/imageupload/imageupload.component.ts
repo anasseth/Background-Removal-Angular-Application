@@ -13,8 +13,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class ImageuploadComponent implements OnInit {
 
+  @ViewChild('myModal') myModal: any;
+
   filePath: any = [];
   showDownloadButton: boolean = false;
+  showSuccessMsg: boolean = false;
   downloadUrl: any = [];
   myForm!: FormGroup;
   public show2: boolean = false;
@@ -24,14 +27,18 @@ export class ImageuploadComponent implements OnInit {
   ratePerImage: any = 1.2;
   convertingImageCount: number = 0;
   showLoader: boolean = false;
-
-  @ViewChild('myModal') myModal: any;
   private modalRef: any;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
-  constructor(public fb: FormBuilder,
-    public _BackgroundRemovingService: RemovalAIService, private modalService: ModalManager, private _snackBar: MatSnackBar, private spinner: NgxSpinnerService) {
+
+  constructor(
+    public fb: FormBuilder,
+    public _BackgroundRemovingService: RemovalAIService,
+    private modalService: ModalManager,
+    private _snackBar: MatSnackBar,
+    private spinner: NgxSpinnerService
+  ) {
     this.myForm = this.fb.group({
       img: [null],
       filename: ['']
@@ -229,6 +236,7 @@ export class ImageuploadComponent implements OnInit {
       }
       else {
         this.showLoader = false;
+        this.showSuccessMsg = true;
         this.convertingImageCount = 0;
         this.showDownloadButton = true;
         this.spinner.hide();

@@ -9,6 +9,13 @@
   padding-bottom: 50px;
 }
 
+.ImageUploadMainText {
+  color: #7b4fa7;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .rm-upload-container .rst-form-group-choose {
   margin: 0 auto !important;
 }
@@ -58,6 +65,7 @@
 
 .rst-form-group-choose .rst-form-group {
   border: 1px solid #ffffff;
+  background-color: white;
   border-radius: 3px;
   padding: 45px 30px 35px 30px;
   position: relative;
@@ -222,13 +230,18 @@ body {
 // 	background: linear-gradient(45deg, rgba(#09AFE8,1) 0%, rgba(#29F499,1) 100%);
 // 	box-shadow: 0 5px 20px rgba(#29F499,.3);
 // }
-.card-purple-pink {
+.card-alert {
   background: linear-gradient(
     45deg,
     rgba(#ff3f3f, 1) 0%,
     rgba(#ff3f3f, 1) 100%
   );
   box-shadow: 0 5px 20px rgba(#fa81e8, 0.3);
+}
+
+.card-success {
+  background: linear-gradient(45deg, #1ba100 0%, #149f03 100%);
+  box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
 }
 
 .card {
