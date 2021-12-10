@@ -198,7 +198,15 @@ body {
 	justify-content: center
 }
 
-
+@media (min-width: 300px) and (max-width:575px) {
+	.topflexmedia {
+	
+		margin-left: 2% !important;	
+		margin-right: 2% !important;
+	
+	}
+  }
+  
 /// banner ui///
 
 
@@ -226,14 +234,14 @@ body {
 // 	box-shadow: 0 5px 20px rgba(#29F499,.3);
 // }
 .card-purple-pink {
-	background: linear-gradient(45deg, rgba(#ff2525, 1) 0%, rgba(#ffb8b8, 1) 100%);
+	background: linear-gradient(45deg, rgba(#ff3f3f, 1) 0%, rgba(#ff3f3f, 1) 100%);
 	box-shadow: 0 5px 20px rgba(#FA81E8, .3);
 }
 
 .card {
 	border       : 0;
 	border-radius: 10px;
-
+	letter-spacing  : 1px !important;
 	// padding: 15px 20px;
 
 }
