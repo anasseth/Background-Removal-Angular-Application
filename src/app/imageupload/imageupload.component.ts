@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ModalManager } from 'ngb-modal';
 
 @Component({
@@ -9,9 +10,10 @@ import { ModalManager } from 'ngb-modal';
 export class ImageuploadComponent implements OnInit {
   @ViewChild('myModal') myModal: any;
   private modalRef: any;
-
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
-  constructor(private modalService: ModalManager) { }
+  constructor(private modalService: ModalManager, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +37,15 @@ export class ImageuploadComponent implements OnInit {
   closeModal() {
     this.modalService.close(this.modalRef);
     //or this.modalRef.close();
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Please upload', 'Close', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      duration: 2000,
+      panelClass: ['blue-snackbar']
+    });
   }
 
 }

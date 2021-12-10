@@ -12,6 +12,9 @@ import { TermconditionComponent } from './termcondition/termcondition.component'
 import { ContactusComponent } from './contactus/contactus.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { ModalModule } from 'ngb-modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { ModalModule } from 'ngb-modal';
     BrowserModule,
     AppRoutingModule,
     ModalModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
