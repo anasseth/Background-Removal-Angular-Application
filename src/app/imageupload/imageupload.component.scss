@@ -1,19 +1,19 @@
 .page-template-template-general {
   background-color: #f6f7fa;
-  padding-top: 170px;
-  box-sizing: content-box;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  box-sizing: border-box;
-  padding-bottom: 50px;
+  padding-top     : 170px;
+  box-sizing      : content-box;
+  max-width       : 100%;
+  overflow-x      : hidden;
+  overflow-y      : hidden;
+  box-sizing      : border-box;
+  padding-bottom  : 50px;
 }
 
 .ImageUploadMainText {
-  color: #7b4fa7;
-  font-size: 35px;
+  color      : #7b4fa7;
+  font-size  : 35px;
   font-weight: 700;
-  text-align: center;
+  text-align : center;
 }
 
 .rm-upload-container .rst-form-group-choose {
@@ -27,20 +27,20 @@
 .rm-upload-utilities {
   //  background-color: #f6f7fa;
   padding-bottom: 40px;
-  margin-top: 80px;
+  margin-top    : 80px;
 }
 
 .rm-upload-utilities .rm-upload-utilities-item {
   text-align: center;
-  margin: auto 37px;
+  margin    : auto 37px;
 }
 
 .rm-upload-utilities-item .rm-upload-utilities-title {
-  font-weight: 600;
-  font-size: 18px;
-  max-width: 80%;
-  text-align: center;
-  margin: auto;
+  font-weight  : 600;
+  font-size    : 18px;
+  max-width    : 80%;
+  text-align   : center;
+  margin       : auto;
   margin-bottom: 25px;
 }
 
@@ -49,40 +49,40 @@
 }
 
 .rst-form-group-choose label {
-  cursor: pointer;
+  cursor        : pointer;
   text-transform: uppercase;
-  font-size: 15px;
-  height: 57px;
-  line-height: 57px;
-  display: inline-block;
-  color: #fff;
-  padding: 0 35px;
-  background: #7b4fa7;
-  margin-bottom: 10px;
-  margin-top: 50px;
-  border-radius: 40px;
+  font-size     : 15px;
+  height        : 57px;
+  line-height   : 57px;
+  display       : inline-block;
+  color         : #fff;
+  padding       : 0 35px;
+  background    : #7b4fa7;
+  margin-bottom : 10px;
+  margin-top    : 50px;
+  border-radius : 40px;
 }
 
 .rst-form-group-choose .rst-form-group {
-  border: 1px solid #ffffff;
+  border       : 1px solid #ffffff;
   border-radius: 3px;
-  padding: 45px 30px 35px 30px;
-  position: relative;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding      : 45px 30px 35px 30px;
+  position     : relative;
+  box-shadow   : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 20px;
 }
 
 .centr {
-  display: flex;
+  display        : flex;
   justify-content: center;
 }
 
 .process {
   background: #7b4fa7;
-  color: white;
-  padding: 10px;
-  outline: none;
-  border: none;
+  color     : white;
+  padding   : 10px;
+  outline   : none;
+  border    : none;
   margin-top: 20px;
 }
 
@@ -92,115 +92,189 @@
 
 body {
   background-image: linear-gradient(45deg, #7175da, #9790f2);
-  font-family: "Muli", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  font-family     : "Muli", sans-serif;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  flex-direction  : column;
+  min-height      : 100vh;
+  margin          : 0;
 }
 
 .course {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius   : 10px;
   // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  max-width: 100%;
+  display         : flex;
+  max-width       : 100%;
   // margin-top: 100px;
   // margin-left: 100px;
-  overflow: hidden;
-  width: 550px;
+  overflow        : hidden;
+  width           : 550px;
 }
 
 .course h6 {
-  opacity: 0.6;
-  margin: 0;
+  opacity       : 0.6;
+  margin        : 0;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .course h2 {
   letter-spacing: 1px;
-  margin: 10px 0;
+  margin        : 10px 0;
 }
 
 .course-preview {
   background-color: #7b4fa7;
-  color: #fff;
-  padding: 30px;
-  max-width: 250px;
+  color           : #fff;
+  padding         : 30px;
+  max-width       : 250px;
+  // padding-top: 30px;
+  // padding-bottom: 30px;
 }
 
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .course-preview-mobile {
+    background-color: #7b4fa7;
+    color           : #fff;
+  padding-top: 50px !important;
+    padding-bottom: 30px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+
+  }
+
+
+  .pri-mobile{
+    color: white;
+    font-size: 16px !important;
+  }
+  
+  .pri-mobile1{
+    color: rgb(0, 0, 0);
+    font-size: 12px !important;
+  }
+  
+  .course-info-mobile{
+    font-size: 12px !important;
+  }
+
+
+  .btn-mobile {
+    background-color: #7b4fa7;
+    border          : 0;
+    border-radius   : 50px;
+    // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    color           : #fff;
+    font-size       : 16px;
+    padding         : 4px 9px !important;
+    position        : absolute;
+    bottom          : 5px;
+    right           : 5px;
+    letter-spacing  : 1px;
+  }
+
+  .fullCardWidth1 {
+    width: 100% !important;
+    right: 14px !important;
+}
+
+  .progress-container1{
+    position: absolute;
+    top: 31px !important;
+    right: 0px !important;
+    text-align: right;
+    width: 132px !important;
+}
+
+.course1 {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  /* max-width: 100%; */
+  overflow: hidden;
+  width: 242px !important;
+}
+
+.course-info1 {
+  padding : 30px;
+  position: unset !important;
+  width   : 100%;
+}
+}
+ 
+
 .course-preview a {
-  color: #fff;
-  display: inline-block;
-  font-size: 12px;
-  opacity: 0.6;
-  margin-top: 30px;
+  color          : #fff;
+  display        : inline-block;
+  font-size      : 12px;
+  opacity        : 0.6;
+  margin-top     : 30px;
   text-decoration: none;
 }
 
 .course-info {
-  padding: 30px;
+  padding : 30px;
   position: relative;
-  width: 100%;
+  width   : 100%;
 }
 
 .progress-container {
-  position: absolute;
-  top: 30px;
-  right: 30px;
+  position  : absolute;
+  top       : 30px;
+  right     : 30px;
   text-align: right;
-  width: 150px;
+  width     : 150px;
 }
 
 .progress {
   background-color: #ddd;
-  border-radius: 3px;
-  height: 5px;
-  width: 100%;
+  border-radius   : 3px;
+  height          : 5px;
+  width           : 100%;
 }
 
 .progress::after {
-  border-radius: 3px;
+  border-radius   : 3px;
   background-color: #2a265f;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 66%;
+  content         : "";
+  position        : absolute;
+  top             : 0;
+  left            : 0;
+  height          : 5px;
+  width           : 66%;
 }
 
 .progress-text {
-  font-size: 10px;
-  opacity: 0.6;
+  font-size     : 10px;
+  opacity       : 0.6;
   letter-spacing: 1px;
 }
 
 .btn {
   background-color: #7b4fa7;
-  border: 0;
-  border-radius: 50px;
+  border          : 0;
+  border-radius   : 50px;
   // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 16px;
-  padding: 9px 20px;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  letter-spacing: 1px;
+  color           : #fff;
+  font-size       : 16px;
+  padding         : 9px 20px;
+  position        : absolute;
+  bottom          : 5px;
+  right           : 5px;
+  letter-spacing  : 1px;
 }
 
 .topflex {
-  display: flex;
+  display        : flex;
   justify-content: center;
 }
 
 @media (min-width: 300px) and (max-width: 575px) {
   .topflexmedia {
-    margin-left: 2% !important;
+    margin-left : 2% !important;
     margin-right: 2% !important;
   }
 }
@@ -208,13 +282,13 @@ body {
 /// banner ui///
 
 body {
-  height: 100vh;
+  height             : 100vh;
   // width           : 100vw;
-  width: 400px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f1f6fa;
+  width              : 400px !important;
+  display            : flex;
+  justify-content    : center;
+  align-items        : center;
+  background-color   : #f1f6fa;
 }
 
 // .card-purple-blue{
@@ -230,11 +304,9 @@ body {
 // 	box-shadow: 0 5px 20px rgba(#29F499,.3);
 // }
 .card-alert {
-  background: linear-gradient(
-    45deg,
-    rgba(#ff3f3f, 1) 0%,
-    rgba(#ff3f3f, 1) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(#ff3f3f, 1) 0%,
+      rgba(#ff3f3f, 1) 100%);
   box-shadow: 0 5px 20px rgba(#fa81e8, 0.3);
 }
 
@@ -244,20 +316,20 @@ body {
 }
 
 .card {
-  border: 0;
-  border-radius: 10px;
+  border        : 0;
+  border-radius : 10px;
   letter-spacing: 1px !important;
   // padding: 15px 20px;
 }
 
 .btn1 {
   background-color: #ff0000;
-  border: 0;
-  border-radius: 50px;
+  border          : 0;
+  border-radius   : 50px;
   // box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 16px;
-  padding: 9px 25px;
+  color           : #fff;
+  font-size       : 16px;
+  padding         : 9px 25px;
 
   letter-spacing: 1px;
 }
@@ -268,9 +340,9 @@ body {
 
 .msg {
   margin-top: 20px;
-  font-size: 13px;
+  font-size : 13px;
   text-align: center;
-  color: #949494;
+  color     : #949494;
 }
 
 .col {
@@ -291,70 +363,70 @@ body {
 }
 
 .cen2 {
-  margin-top: 20px;
-  display: flex;
+  margin-top     : 20px;
+  display        : flex;
   justify-content: center;
 }
 
 .download {
   background-color: #36ac45;
-  border: 0;
-  color: white;
-  border-radius: 20px;
-  margin-top: 10px;
-  padding-left: 4%;
-  padding-right: 4%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  font-size: 12px;
+  border          : 0;
+  color           : white;
+  border-radius   : 20px;
+  margin-top      : 10px;
+  padding-left    : 4%;
+  padding-right   : 4%;
+  padding-top     : 2%;
+  padding-bottom  : 2%;
+  font-size       : 12px;
 }
 
 .imgcard {
-  background-color: #f6f7fa;
+  background-color      : #f6f7fa;
   // padding-left    : 2%;
   // padding-right   : 2%;
-  padding-bottom: 2%;
-  padding-top: 3%;
-  width: 350px;
-  height: fit-content;
-  margin-left: 1%;
-  margin-bottom: 2%;
+  padding-bottom        : 2%;
+  padding-top           : 3%;
+  width                 : 350px;
+  height                : fit-content;
+  margin-left           : 1%;
+  margin-bottom         : 2%;
   // box-shadow         : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .download {
-  display: block;
+  display         : block;
   background-color: #36ac45;
-  border: 0;
-  color: white;
-  border-radius: 20px;
-  margin-top: 10px !important;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  font-size: 12px;
-  width: 50%;
-  text-align: center;
-  margin: auto;
+  border          : 0;
+  color           : white;
+  border-radius   : 20px;
+  margin-top      : 10px !important;
+  padding-left    : 2%;
+  padding-right   : 2%;
+  padding-top     : 2%;
+  padding-bottom  : 2%;
+  font-size       : 12px;
+  width           : 50%;
+  text-align      : center;
+  margin          : auto;
 }
 
 .imgcard {
-  background-color: #f6f7fa;
+  background-color      : #f6f7fa;
   // padding-left    : 2%;
   // padding-right   : 2%;
-  padding-bottom: 2%;
-  padding-top: 3%;
-  width: 350px;
-  height: fit-content;
-  margin-left: 1%;
-  margin-bottom: 2%;
+  padding-bottom        : 2%;
+  padding-top           : 3%;
+  width                 : 350px;
+  height                : fit-content;
+  margin-left           : 1%;
+  margin-bottom         : 2%;
   // box-shadow         : rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .cancle {
-  color: red;
-  float: right;
+  color    : red;
+  float    : right;
   font-size: 20px;
   transform: translateY(-20px);
 }
@@ -364,7 +436,7 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width    : 100%;
   // height: ;
   border-radius: 20px;
 }
@@ -383,19 +455,19 @@ img {
 
 .con {
   background-color: rgb(0, 81, 255) !important;
-  margin-left: 2%;
-  border-radius: 40px !important;
+  margin-left     : 2%;
+  border-radius   : 40px !important;
 }
 
 .cancle {
-  color: red;
-  float: right;
+  color    : red;
+  float    : right;
   font-size: 20px;
   transform: translateY(-20px);
 }
 
 img {
-  max-width: 100%;
+  max-width    : 100%;
   // height: ;
   border-radius: 20px;
 }
@@ -410,9 +482,15 @@ img {
 
 .con {
   background-color: rgb(0, 81, 255) !important;
-  margin-left: 2%;
-  border-radius: 40px !important;
+  margin-left     : 2%;
+  border-radius   : 40px !important;
 }
-.banner-width{
+
+.banner-width {
   width: 1170px;
 }
+
+.pri{
+  color: white;
+}
+
