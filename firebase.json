@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/bgremoval",
+    "public": "dist/Imgageremover",
     "ignore": [
       "firebase.json",
       "**/.*",

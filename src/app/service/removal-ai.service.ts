@@ -15,27 +15,7 @@ export class RemovalAIService {
     public _http: HttpClient
   ) { }
 
-  convertImageUsingFreeRapidAPI(data:string) {
-    this.httpOptions = new HttpHeaders({
-      'content-type': 'application/x-www-form-urlencoded',
-      'x-rapidapi-host': 'background-removal.p.rapidapi.com',
-      'x-rapidapi-key': '47f28bb9f5msh5076ad1bd081279p175211jsn990379680bef'
-    })
-
-    console.log("Data : ", data)
-    console.log("Header : ", this.httpOptions)
-
-    return this._http.post<any>(
-      environment.rapidAPI,
-      data,
-      {
-        headers: this.httpOptions
-      }
-    )
-      .pipe(catchError(this.errorHandler))
-  }
-
-  convertImageUsingRemovalAI(data:any){
+  convertImageUsingRemovalAI(data: any) {
     this.httpOptions = new HttpHeaders({
       'Rm-Token': environment.removalAiToken,
     })

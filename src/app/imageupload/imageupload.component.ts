@@ -223,7 +223,16 @@ export class ImageuploadComponent implements OnInit {
           data => {
             console.log("Image Data Showing")
             console.log(data)
-            this.downloadUrl.push(data.preview_demo)
+
+            let downloadURL: any = {
+              url: null,
+              isURLavailable: false
+            }
+
+            this.downloadUrl.url = data.preview_demo
+            this.downloadUrl.isURLavailable = true;
+
+            this.downloadUrl.push(downloadURL)
           },
           err => {
             this.openSnackBar("Server Error: Conversion Failed !");

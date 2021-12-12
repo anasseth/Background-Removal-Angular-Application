@@ -72,8 +72,11 @@
                       </div>
                       <a
                         class="download"
-                        [href]="downloadUrl[i]"
-                        *ngIf="showDownloadButton == true"
+                        [href]="downloadUrl[i].url"
+                        *ngIf="
+                          showDownloadButton == true &&
+                          downloadUrl[i].isURLavailable == true
+                        "
                         ><i class="fa fa-download" aria-hidden="true"></i>
                         Download</a
                       >
