@@ -1,21 +1,17 @@
 <div class="over">
-  <div
-    class="
+  <div class="
       rm-upload-process-content rm-hidden rm-upload-container
       page-template-template-general
-    "
-  >
+    ">
     <p class="ImageUploadMainText">
       Remove The Background From Your Image Instantly
     </p>
     <div class="rm-upload-process-top">
       <div class="container-fluid" *ngIf="showSuccessMsg == false">
         <div class="row mb-5 topflex">
-          <div class="col-12 col-sm-6 col-md-9">
+          <div class="banner-width">
             <div class="card card-alert text-white">
-              <div
-                class="card-body d-flex justify-content-between align-items-end"
-              >
+              <div class="card-body d-flex justify-content-between align-items-end">
                 <div class="card-number">
                   <div class="h3 m-0"></div>
                   "Please don't close the window or browser because otherwise
@@ -31,11 +27,9 @@
 
       <div class="container-fluid" *ngIf="showSuccessMsg == true">
         <div class="row mb-5 topflex">
-          <div class="col-12 col-sm-6 col-md-9">
+          <div class="banner-width">
             <div class="card card-success text-white">
-              <div
-                class="card-body d-flex justify-content-between align-items-end"
-              >
+              <div class="card-body d-flex justify-content-between align-items-end">
                 <div class="card-number">
                   <div class="h3 m-0"></div>
                   Your Images Has Been Successfully Converted. Please Download
@@ -54,21 +48,12 @@
               <div class="rm-upload-message rm-hidden">
                 <div class="container">
                   <div class="row" *ngIf="filePath && filePath.length > 0">
-                    <div
-                      class="col-md-4 imgcard"
-                      *ngFor="let imagePath of filePath; let i = index"
-                    >
+                    <div class="col-md-4 imgcard" *ngFor="let imagePath of filePath; let i = index">
                       <div class="cancle" (click)="removeImage(i)">
                         <i class="fa fa-times" aria-hidden="true"></i>
                       </div>
                       <div class="rm-upload-utilities-item">
-                        <img
-                          [src]="imagePath"
-                          alt=""
-                          width="244"
-                          height="180"
-                          class="imageUploaded"
-                        />
+                        <img [src]="imagePath" alt="" width="244" height="180" class="imageUploaded" />
                       </div>
                       <a
                         class="download"
@@ -85,26 +70,15 @@
                 </div>
               </div>
               <div class="rst-form-group-button">
-                <label id="rst_choose_upload" for="rm_upload_file"
-                  ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
-                  IMAGE ({{ this.imgData.length }})</label
-                >
-                <input
-                  type="file"
-                  class="form-control"
-                  id="rm_upload_file"
-                  name="rm_file_upload"
-                  (change)="imagePreview($event)"
-                  accept="image/png|image/jpg|image/jpeg"
-                  [disabled]="this.imgData.length == 3"
-                />
-                <label
-                  class="con"
-                  (click)="openModal()"
-                  *ngIf="this.imgData.length > 0"
-                  ><i class="fa fa-refresh" aria-hidden="true"></i> Start
-                  Conversion</label
-                >
+                <label id="rst_choose_upload" for="rm_upload_file"><i class="fa fa-picture-o" aria-hidden="true"></i>
+                  UPLOAD
+                  IMAGE ({{ this.imgData.length }})</label>
+                <input type="file" class="form-control" id="rm_upload_file" name="rm_file_upload"
+                  (change)="imagePreview($event)" accept="image/png|image/jpg|image/jpeg"
+                  [disabled]="this.imgData.length == 3" />
+                <label class="con" (click)="openModal()" *ngIf="this.imgData.length > 0"><i class="fa fa-refresh"
+                    aria-hidden="true"></i> Start
+                  Conversion</label>
 
                 <span>or Drag and Drop images</span>
               </div>
@@ -116,14 +90,7 @@
 
     <div class="rm-upload-process-bottom" id="rm-upload-result">
       <div class="rm-upload-process-bottom-inner"></div>
-      <p
-        style="
-          margin-top: 20px;
-          font-size: 13px;
-          text-align: center;
-          color: #949494;
-        "
-      >
+      <p class="msg">
         Please download your files. They will be discarded automatically after
         60 minutes.
       </p>
@@ -136,12 +103,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload1.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload1.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">
                 Fully Automated Background Remover
               </p>
@@ -153,12 +115,7 @@
           </div>
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload2.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload2.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">Replace to Any Background</p>
               <p class="rm-upload-utilities-content">
                 Easily replace the distracting background with solid background
@@ -168,12 +125,7 @@
           </div>
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload3.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload3.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">Design the way you want</p>
               <p class="rm-upload-utilities-content">
                 Get a transparent image then easily yet effectively create
@@ -192,21 +144,21 @@
         </modal-header>
         <modal-content>
           <div class="row topflex topflexmedia" *ngIf="show">
-            <div class="col-12 col-sm-6 col-md-4 fullCardWidth">
-              <div class="course">
-                <div class="course-preview">
-                  <h6 style="color: white">Price</h6>
-                  <h2 style="color: white">
+            <div class="col-12 col-sm-6 col-md-4 fullCardWidth fullCardWidth1">
+              <div class="course course1">
+                <div class="course-preview course-preview-mobile">
+                  <h6 class="pri pri-mobile">Price</h6>
+                  <h2 class="pri pri-mobile">
                     ${{ (this.imgData.length * this.ratePerImage).toFixed(2) }}
                   </h2>
                 </div>
-                <div class="course-info">
-                  <div class="progress-container">
+                <div class="course-info course-info1 course-info-mobile">
+                  <div class="progress-container progress-container1 ">
                     Removing Background of {{ this.imgData.length }} Images
                   </div>
-                  <h3>{{ this.imgData.length }}</h3>
-                  <h4>Total images</h4>
-                  <button class="btn" (click)="showPaymentOption()">
+                  <h3 class=" pri-mobile1">{{ this.imgData.length }}</h3>
+                  <h4 class=" pri-mobile1">Total images</h4>
+                  <button class="btn btn-mobile" (click)="showPaymentOption()">
                     Proceed
                   </button>
                 </div>
