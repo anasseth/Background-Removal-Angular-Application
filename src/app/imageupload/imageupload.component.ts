@@ -31,6 +31,7 @@ export class ImageuploadComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
+  clearData: boolean = false
 
   constructor(
     public fb: FormBuilder,
@@ -187,20 +188,20 @@ export class ImageuploadComponent implements OnInit {
       this.myForm.patchValue({
         img: file
       });
-      this.imgData.push(file)
+      if (file != undefined || file != null) {
+        this.imgData.push(file)
+        this.myForm.get('img')?.updateValueAndValidity()
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.filePath.push(reader.result as string);
+        }
+        reader.readAsDataURL(file)
 
-      this.myForm.get('img')?.updateValueAndValidity()
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.filePath.push(reader.result as string);
+        this.myForm = this.fb.group({
+          img: [null],
+          filename: ['']
+        })
       }
-      reader.readAsDataURL(file)
-
-      this.myForm = this.fb.group({
-        img: [null],
-        filename: ['']
-      })
     }
     else {
       this.openSnackBar("You Cannot Upload More Then 3 Images")
@@ -224,15 +225,15 @@ export class ImageuploadComponent implements OnInit {
             console.log("Image Data Showing")
             console.log(data)
 
-            let downloadURL: any = {
+            let downloadURLobj: any = {
               url: null,
               isURLavailable: false
             }
 
-            this.downloadUrl.url = data.preview_demo
-            this.downloadUrl.isURLavailable = true;
+            downloadURLobj.url = data.preview_demo
+            downloadURLobj.isURLavailable = true;
 
-            this.downloadUrl.push(downloadURL)
+            this.downloadUrl.push(downloadURLobj)
           },
           err => {
             this.openSnackBar("Server Error: Conversion Failed !");
@@ -251,6 +252,7 @@ export class ImageuploadComponent implements OnInit {
         this.convertingImageCount = 0;
         this.showDownloadButton = true;
         this.spinner.hide();
+        this.clearData = false;
         this.closeModal();
       }
     }
@@ -294,8 +296,33 @@ export class ImageuploadComponent implements OnInit {
   }
 
   removeImage(i: any) {
+    console.log("Image Data", this.imgData)
+    console.log("FilePath Data", this.filePath)
+    console.log("Download URL", this.downloadUrl)
     this.imgData.splice(i, 1)
     this.filePath.splice(i, 1)
+    this.downloadUrl.splice(i, 1)
+    console.log("Image Data", this.imgData)
+    console.log("FilePath Data", this.filePath)
+    console.log("Download URL", this.downloadUrl)
+  }
+
+  clearDownloadedImages() {
+    console.log("Download URL : ", this.downloadUrl)
+    console.log("Clear Data Check", this.clearData)
+    if (this.downloadUrl.length > 0 && this.clearData == false) {
+      console.log("Clear Download Condition # 1")
+      this.closeModal();
+      this.openSnackBar(`
+      Please Download the Converted Image & Remove Them Before the Next Conversion. Else Your Data Will be Lost
+      `)
+      this.clearData = true;
+    }
+    else {
+      console.log("Clear Download Condition # 2")
+      this.downloadUrl = [];
+      this.convertImages()
+    }
   }
 
 }
