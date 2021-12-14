@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   Gotoprice() {
     this.router.navigate(['/pricing']);
   }
-
   Gotoprivacy() {
     this.router.navigate(['/privacypolicy']);
   }

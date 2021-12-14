@@ -104,7 +104,7 @@
                 />
                 <label
                   class="con"
-                  (click)="openModal()"
+                  (click)="openModal(); CalculatePricing()"
                   *ngIf="this.imgData.length > 0"
                   ><i class="fa fa-refresh" aria-hidden="true"></i> Start
                   Conversion</label
@@ -123,8 +123,8 @@
     <div class="rm-upload-process-bottom" id="rm-upload-result">
       <div class="rm-upload-process-bottom-inner"></div>
       <p class="msg">
-        Please download your files. They will be discarded automatically after
-        60 minutes.
+        Please download your files. They will be discarded automatically. Images
+        are not stored on our server
       </p>
     </div>
   </div>

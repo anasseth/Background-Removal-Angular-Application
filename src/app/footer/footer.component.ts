@@ -21,6 +21,4 @@ export class FooterComponent implements OnInit {
   Gotocontactus() {
     this.router.navigate(['/contactus']);
   }
-
- 
 }

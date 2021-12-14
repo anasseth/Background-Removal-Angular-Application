@@ -40,6 +40,8 @@ export class ImageuploadComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   public show: boolean = true
   clearData: boolean = false
+  totalBilling: any = 0;
+  totalQuantity: any = 0;
 
   constructor(
     public fb: FormBuilder,
@@ -134,22 +136,22 @@ export class ImageuploadComponent implements OnInit {
             {
               amount: {
                 currency_code: "USD",
-                value: (this.ratePerImage * this.imgData.length).toString(),
+                value: this.totalBilling,
                 breakdown: {
                   item_total: {
                     currency_code: "USD",
-                    value: (this.ratePerImage * this.imgData.length).toString()
+                    value: this.totalBilling
                   }
                 }
               },
               items: [
                 {
                   name: "Background Removal of Image",
-                  quantity: this.imgData.length,
+                  quantity: this.totalQuantity,
                   category: "DIGITAL_GOODS",
                   unit_amount: {
                     currency_code: "USD",
-                    value: (this.ratePerImage * this.imgData.length).toString()
+                    value: this.totalBilling
                   }
                 }
               ]
@@ -198,6 +200,12 @@ export class ImageuploadComponent implements OnInit {
     this.show = !this.show
   }
 
+  CalculatePricing() {
+    var imageData = this.downloadUrl.filter((x: any) => x.isURLavailable == false);
+    this.totalQuantity = (imageData.length).toString();
+    this.totalBilling = (imageData.length * this.ratePerImage).toString();
+  }
+
   toggleImagePreview() {
     if (this.showOriginal == true) {
       this.showOriginal = false;
@@ -209,7 +217,7 @@ export class ImageuploadComponent implements OnInit {
     }
   }
 
-  setActiveIndex(i:any){
+  setActiveIndex(i: any) {
     this.activeIndex = i
   }
 
