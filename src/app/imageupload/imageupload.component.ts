@@ -5,6 +5,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ModalManager } from 'ngb-modal';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'app-imageupload',
@@ -270,6 +271,7 @@ export class ImageuploadComponent implements OnInit {
   }
 
   openModal() {
+    console.log("Envoirnment Token : ", environment.removalAiToken)
     this.modalRef = this.modalService.open(this.myModal, {
       size: "md",
       modalClass: 'mymodal',
