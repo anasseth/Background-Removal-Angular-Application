@@ -287,6 +287,7 @@ export class ImageuploadComponent implements OnInit {
   closeModal() {
     this.modalService.close(this.modalRef);
     this.show2 = false
+    this.show = true
   }
 
   showPaymentOption() {

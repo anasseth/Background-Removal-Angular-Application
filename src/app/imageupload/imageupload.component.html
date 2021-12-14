@@ -307,16 +307,19 @@
                 <div class="course-preview course-preview-mobile">
                   <h6 class="pri pri-mobile">Price</h6>
                   <h2 class="pri pri-mobile">
-                    ${{ (this.imgData.length * this.ratePerImage).toFixed(2) }}
+                    ${{ (this.totalBilling * 1).toFixed(2) }}
                   </h2>
                 </div>
                 <div class="course-info course-info1 course-info-mobile">
                   <div class="progress-container progress-container1">
-                    Removing Background of {{ this.imgData.length }} Images
+                    Removing Background of {{ this.totalQuantity }} Images
                   </div>
-                  <h3 class="pri-mobile1">{{ this.imgData.length }}</h3>
+                  <h3 class="pri-mobile1">{{ this.totalQuantity }}</h3>
                   <h4 class="pri-mobile1">Total images</h4>
-                  <button class="btn btn-mobile" (click)="showPaymentOption()">
+                  <button
+                    class="btn btn-mobile"
+                    (click)="showPaymentOption(); convertImages()"
+                  >
                     Proceed
                   </button>
                 </div>
@@ -326,9 +329,9 @@
           <ngx-paypal [config]="payPalConfig" *ngIf="show2"></ngx-paypal>
         </modal-content>
         <modal-footer>
-          <button class="btn1 btn2 btn-success" (click)="convertImages()">
+          <!-- <button class="btn1 btn2 btn-success" (click)="convertImages()">
             Convert Image
-          </button>
+          </button> -->
           <button class="btn1 btn-success" (click)="closeModal()">close</button>
         </modal-footer>
       </modal>
