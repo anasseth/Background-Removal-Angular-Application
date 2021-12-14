@@ -275,16 +275,28 @@ p {
   }
 }
 
-@media (min-width: 769px) and (max-width: 991px) {
-  .imgbn1 {
-    width: 80% !important;
+@media (min-width: 768px) and (max-width: 891px) {
+  .imgbn2 {
+margin-top: 20% !important;
   }
 
-  ._twentytwenty-container {
-    text-align: center;
-    margin-bottom: 10%;
-  }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .imgbn3 {
+margin-top: 40% !important;
+  }
+
+}
+// @media (min-width: 768px) and (max-width: 950px) {
+//   .imgbn4 {
+// margin-top: 10% !important;
+//   }
+
+// }
+
+
+
 
 .imgbn1 {
   border-radius: 20px;

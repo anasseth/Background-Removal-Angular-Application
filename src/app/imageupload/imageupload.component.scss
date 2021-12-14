@@ -662,8 +662,20 @@ img {
   }
 }
 
-@media (min-width: 300px) and (max-width: 769px) {
+@media (min-width: 300px) and (max-width: 767px) {
   .mobilecardpreview {
-    transform: translate(0px);
+    transform: translate(0px) !important;
+    height: 400px !important;
+
   }
+.offset-sm-2 {
+    margin-left: 0% !important;
 }
+}
+
+
+// @media (min-width: 576px){
+// .offset-sm-2 {
+//     margin-left: 16.66666667%;
+// }
+// }
