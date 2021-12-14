@@ -15,6 +15,14 @@ export class ImageuploadComponent implements OnInit {
 
   @ViewChild('myModal') myModal: any;
 
+  imageUrl: string = "https://file.removal.ai/low_resolution/7aba9b9d-2dcb-4063-8b41-4cd6b707ce56_test-women.png";
+  base64image: any;
+
+  showPreview: Boolean = false;
+  activeIndex: number = 0;
+  showOriginal: boolean = true;
+  showConverted: boolean = false;
+  convertedImgData: any = [];
   filePath: any = [];
   showDownloadButton: boolean = false;
   showSuccessMsg: boolean = false;
@@ -108,6 +116,15 @@ export class ImageuploadComponent implements OnInit {
     //     console.log('onClick', data, actions);
     //   },
     // };
+
+    // this._BackgroundRemovingService.getBase64ImageFromURL(this.imageUrl).subscribe(
+    //   (data: any) => {
+    //     console.log(data);
+    //     // this is the image as dataUrl
+    //     this.base64image = 'data:image/jpg;base64,' + data;
+    //     this.convertedImgData.push(this.base64image)
+    //   });
+
     this.payPalConfig = {
       clientId: "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
       createOrderOnClient: (data) =>
@@ -181,7 +198,23 @@ export class ImageuploadComponent implements OnInit {
     this.show = !this.show
   }
 
+  toggleImagePreview() {
+    if (this.showOriginal == true) {
+      this.showOriginal = false;
+      this.showConverted = true;
+    }
+    else {
+      this.showOriginal = true;
+      this.showConverted = false;
+    }
+  }
+
+  setActiveIndex(i:any){
+    this.activeIndex = i
+  }
+
   imagePreview(e: Event) {
+    this.showPreview = false;
     if (this.imgData.length < 4) {
       var file: any = e.target as HTMLInputElement;
       file = file.files[0]
@@ -189,6 +222,20 @@ export class ImageuploadComponent implements OnInit {
         img: file
       });
       if (file != undefined || file != null) {
+
+        let downloadURLobj: any = {
+          previewUrl: null,
+          lowResolutionUrl: null,
+          highResolutionUrl: null,
+          original_height: null,
+          original_width: null,
+          preview_height: null,
+          preview_width: null,
+          isURLavailable: false
+        }
+
+        this.downloadUrl.push(downloadURLobj)
+
         this.imgData.push(file)
         this.myForm.get('img')?.updateValueAndValidity()
         const reader = new FileReader();
@@ -204,6 +251,7 @@ export class ImageuploadComponent implements OnInit {
       }
     }
     else {
+      console.log("Inside Else")
       this.openSnackBar("You Cannot Upload More Then 3 Images")
     }
   }
@@ -220,33 +268,51 @@ export class ImageuploadComponent implements OnInit {
         var imageData = new FormData();
         imageData.append("image_file", this.imgData[this.convertingImageCount], this.filePath[this.convertingImageCount].name);
         imageData.append("image_url", "");
-        this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
-          data => {
-            console.log("Image Data Showing")
-            console.log(data)
 
-            let downloadURLobj: any = {
-              url: null,
-              isURLavailable: false
+        if (this.downloadUrl[this.convertingImageCount].isURLavailable == false) {
+          this._BackgroundRemovingService.convertImageUsingRemovalAI(imageData).subscribe(
+            data => {
+              console.log("Image Data Showing")
+              console.log(data)
+
+              this.downloadUrl[this.convertingImageCount].lowResolutionUrl = data.low_resolution;
+              this.downloadUrl[this.convertingImageCount].previewUrl = data.preview_demo;
+              this.downloadUrl[this.convertingImageCount].original_height = data.original_height;
+              this.downloadUrl[this.convertingImageCount].original_width = data.original_width;
+              this.downloadUrl[this.convertingImageCount].preview_height = data.preview_height;
+              this.downloadUrl[this.convertingImageCount].preview_width = data.preview_width;
+              this.downloadUrl[this.convertingImageCount].isURLavailable = true;
+            },
+            err => {
+              this.openSnackBar("Server Error: Conversion Failed !");
+              this.showLoader = false;
+              this.spinner.hide();
+              this.closeModal();
+            },
+            () => {
+              this._BackgroundRemovingService.getBase64ImageFromURL(this.downloadUrl[this.convertingImageCount].previewUrl).subscribe(
+                (data: any) => {
+                  console.log(data);
+                  this.base64image = 'data:image/jpg;base64,' + data;
+                  this.convertedImgData[this.convertingImageCount] = this.base64image
+                },
+                (err: any) => {
+                  console.log(err)
+                },
+                () => {
+                  this.convertingImageCount = this.convertingImageCount + 1;
+                  this.convertImages();
+                });
             }
-
-            downloadURLobj.url = data.preview_demo
-            downloadURLobj.isURLavailable = true;
-
-            this.downloadUrl.push(downloadURLobj)
-          },
-          err => {
-            this.openSnackBar("Server Error: Conversion Failed !");
-            this.showLoader = false;
-            this.spinner.hide();
-            this.closeModal();
-          }, () => {
-            this.convertingImageCount = this.convertingImageCount + 1;
-            this.convertImages();
-          }
-        )
+          )
+        }
+        else {
+          this.convertingImageCount = this.convertingImageCount + 1;
+          this.convertImages();
+        }
       }
       else {
+        this.showPreview = true;
         this.showLoader = false;
         this.showSuccessMsg = true;
         this.convertingImageCount = 0;
@@ -302,27 +368,28 @@ export class ImageuploadComponent implements OnInit {
     this.imgData.splice(i, 1)
     this.filePath.splice(i, 1)
     this.downloadUrl.splice(i, 1)
+    this.convertedImgData.splice(i, 1)
     console.log("Image Data", this.imgData)
     console.log("FilePath Data", this.filePath)
     console.log("Download URL", this.downloadUrl)
   }
 
-  clearDownloadedImages() {
-    console.log("Download URL : ", this.downloadUrl)
-    console.log("Clear Data Check", this.clearData)
-    if (this.downloadUrl.length > 0 && this.clearData == false) {
-      console.log("Clear Download Condition # 1")
-      this.closeModal();
-      this.openSnackBar(`
-      Please Download the Converted Image & Remove Them Before the Next Conversion. Else Your Data Will be Lost
-      `)
-      this.clearData = true;
-    }
-    else {
-      console.log("Clear Download Condition # 2")
-      this.downloadUrl = [];
-      this.convertImages()
-    }
-  }
+  // clearDownloadedImages() {
+  //   console.log("Download URL : ", this.downloadUrl)
+  //   console.log("Clear Data Check", this.clearData)
+  //   if (this.downloadUrl.length > 0 && this.clearData == false) {
+  //     console.log("Clear Download Condition # 1")
+  //     this.closeModal();
+  //     this.openSnackBar(`
+  //     Please Download the Converted Image & Remove Them Before the Next Conversion. Else Your Data Will be Lost
+  //     `)
+  //     this.clearData = true;
+  //   }
+  //   else {
+  //     console.log("Clear Download Condition # 2")
+  //     this.downloadUrl = [];
+  //     this.convertImages()
+  //   }
+  // }
 
 }

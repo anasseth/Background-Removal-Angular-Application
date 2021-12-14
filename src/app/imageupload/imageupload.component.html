@@ -72,11 +72,11 @@
                       </div>
                       <a
                         class="download"
-                        [href]="downloadUrl[i].url"
+                        [href]="downloadUrl[i].lowResolutionUrl"
                         *ngIf="
                           showDownloadButton == true &&
                           downloadUrl[i] != undefined &&
-                          downloadUrl[i].url != undefined
+                          downloadUrl[i].lowResolutionUrl != undefined
                         "
                         ><i class="fa fa-download" aria-hidden="true"></i>
                         Download</a
@@ -86,7 +86,10 @@
                 </div>
               </div>
               <div class="rst-form-group-button">
-                <label id="rst_choose_upload" for="rm_upload_file"
+                <label
+                  id="rst_choose_upload"
+                  [ngClass]="imgData.length == 3 ? 'disabled' : ''"
+                  for="rm_upload_file"
                   ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
                   IMAGE ({{ this.imgData.length }})</label
                 >
@@ -107,7 +110,9 @@
                   Conversion</label
                 >
 
-                <span>or Drag and Drop images</span>
+                <span class="imageUploadText" *ngIf="imgData.length == 3"
+                  >You Cannot Upload More Then 3 Images</span
+                >
               </div>
             </div>
           </div>
@@ -121,6 +126,117 @@
         Please download your files. They will be discarded automatically after
         60 minutes.
       </p>
+    </div>
+  </div>
+
+  <div class="container mt-5" *ngIf="showPreview">
+    <div class="row">
+      <div class="offset-sm-2 col-md-6 ml-auto col-xl-6 mr-auto">
+        <div class="cardimageremove">
+          <div class="card-header">
+            <ul class="nav nav-tabs justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a
+                  [ngClass]="showOriginal ? 'nav-link active' : 'nav-link'"
+                  data-toggle="tab"
+                  role="tab"
+                  (click)="toggleImagePreview()"
+                >
+                  Original
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  [ngClass]="showConverted ? 'nav-link active' : 'nav-link'"
+                  data-toggle="tab"
+                  role="tab"
+                  (click)="toggleImagePreview()"
+                >
+                  Remove background
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content text-center">
+              <div class="tab-pane active" id="home" role="tabpanel">
+                <img
+                  class="black previewImageBorder"
+                  [src]="
+                    showOriginal == true && showConverted == false
+                      ? filePath[activeIndex]
+                      : convertedImgData[activeIndex]
+                  "
+                  alt="Bgmoval.AI - Free Background Remover"
+                  width="417"
+                  height="100"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="thumbnailContainer">
+            <div
+              class="thumbnail"
+              *ngFor="let imagePath of filePath; let i = index"
+            >
+              <img
+                [src]="imagePath"
+                class="thumbnailImage"
+                (click)="setActiveIndex(i)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 ml-auto col-xl-6 mr-auto">
+        <div class="cardimageremove1 mobilecardpreview">
+          <div class="verticallyCentered">
+            <ul
+              class="nav nav-tabs justify-content-center"
+              role="tablist"
+              style="align-items: center; display: flex"
+            >
+              <li class="nav-item mb-2 mt-5">
+                <a
+                  class="nav-link active1"
+                  data-toggle="tab"
+                  role="tab"
+                  *ngIf="
+                    downloadUrl[activeIndex] != undefined &&
+                    downloadUrl[activeIndex].lowResolutionUrl != undefined
+                  "
+                  [href]="downloadUrl[activeIndex].lowResolutionUrl"
+                >
+                  <i class="fa fa-download" aria-hidden="true"></i> Download
+                </a>
+              </li>
+              <label class="msg">
+                Preview Image {{ downloadUrl[activeIndex].preview_width }} x
+                {{ downloadUrl[activeIndex].preview_height }}
+              </label>
+              <li class="nav-item mb-2 mt-5">
+                <a
+                  class="nav-link active1"
+                  data-toggle="tab"
+                  role="tab"
+                  *ngIf="
+                    downloadUrl[activeIndex] != undefined &&
+                    downloadUrl[activeIndex].previewUrl != undefined
+                  "
+                  [href]="downloadUrl[activeIndex].previewUrl"
+                >
+                  <i class="fa fa-download" aria-hidden="true"></i> Download HD
+                </a>
+              </li>
+              <label class="msg">
+                Full Image {{ downloadUrl[activeIndex].original_width }} x
+                {{ downloadUrl[activeIndex].original_height }}
+              </label>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -210,10 +326,7 @@
           <ngx-paypal [config]="payPalConfig" *ngIf="show2"></ngx-paypal>
         </modal-content>
         <modal-footer>
-          <button
-            class="btn1 btn2 btn-success"
-            (click)="clearDownloadedImages()"
-          >
+          <button class="btn1 btn2 btn-success" (click)="convertImages()">
             Convert Image
           </button>
           <button class="btn1 btn-success" (click)="closeModal()">close</button>
