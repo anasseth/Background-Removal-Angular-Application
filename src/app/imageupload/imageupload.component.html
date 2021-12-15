@@ -1,10 +1,8 @@
 <div class="over">
-  <div
-    class="
+  <div class="
       rm-upload-process-content rm-hidden rm-upload-container
       page-template-template-general
-    "
-  >
+    ">
     <p class="ImageUploadMainText">
       Remove The Background From Your Image Instantly
     </p>
@@ -13,9 +11,7 @@
         <div class="row mb-5 topflex">
           <div class="banner-width">
             <div class="card card-alert text-white">
-              <div
-                class="card-body d-flex justify-content-between align-items-end"
-              >
+              <div class="card-body d-flex justify-content-between align-items-end">
                 <div class="card-number">
                   <div class="h3 m-0"></div>
                   "Please don't close the window or browser because otherwise
@@ -33,9 +29,7 @@
         <div class="row mb-5 topflex">
           <div class="banner-width">
             <div class="card card-success text-white">
-              <div
-                class="card-body d-flex justify-content-between align-items-end"
-              >
+              <div class="card-body d-flex justify-content-between align-items-end">
                 <div class="card-number">
                   <div class="h3 m-0"></div>
                   Your Images Has Been Successfully Converted. Please Download
@@ -54,65 +48,35 @@
               <div class="rm-upload-message rm-hidden">
                 <div class="container">
                   <div class="row" *ngIf="filePath && filePath.length > 0">
-                    <div
-                      class="col-md-4 imgcard"
-                      *ngFor="let imagePath of filePath; let i = index"
-                    >
+                    <div class="col-md-4 imgcard" *ngFor="let imagePath of filePath; let i = index">
                       <div class="cancle" (click)="removeImage(i)">
                         <i class="fa fa-times" aria-hidden="true"></i>
                       </div>
                       <div class="rm-upload-utilities-item">
-                        <img
-                          [src]="imagePath"
-                          alt=""
-                          width="244"
-                          height="180"
-                          class="imageUploaded"
-                        />
+                        <img [src]="imagePath" alt="" width="244" height="180" class="imageUploaded" />
                       </div>
-                      <a
-                        class="download"
-                        [href]="downloadUrl[i].lowResolutionUrl"
-                        *ngIf="
+                      <a class="download" [href]="downloadUrl[i].lowResolutionUrl" *ngIf="
                           showDownloadButton == true &&
                           downloadUrl[i] != undefined &&
                           downloadUrl[i].lowResolutionUrl != undefined
-                        "
-                        ><i class="fa fa-download" aria-hidden="true"></i>
-                        Download</a
-                      >
+                        "><i class="fa fa-download" aria-hidden="true"></i>
+                        Download</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="rst-form-group-button">
-                <label
-                  id="rst_choose_upload"
-                  [ngClass]="imgData.length == 3 ? 'disabled' : ''"
-                  for="rm_upload_file"
-                  ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
-                  IMAGE ({{ this.imgData.length }})</label
-                >
-                <input
-                  type="file"
-                  class="form-control"
-                  id="rm_upload_file"
-                  name="rm_file_upload"
-                  (change)="imagePreview($event)"
-                  accept="image/png,image/jpg,image/jpeg"
-                  [disabled]="this.imgData.length == 3"
-                />
-                <label
-                  class="con"
-                  (click)="openModal(); CalculatePricing()"
-                  *ngIf="this.imgData.length > 0"
-                  ><i class="fa fa-refresh" aria-hidden="true"></i> Start
-                  Conversion</label
-                >
+                <label id="rst_choose_upload" [ngClass]="imgData.length == 3 ? 'disabled' : ''" for="rm_upload_file"><i
+                    class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
+                  IMAGE ({{ this.imgData.length }})</label>
+                <input type="file" class="form-control" id="rm_upload_file" name="rm_file_upload"
+                  (change)="imagePreview($event)" accept="image/png,image/jpg,image/jpeg"
+                  [disabled]="this.imgData.length == 3" />
+                <label class="con" (click)="openModal(); CalculatePricing()" *ngIf="this.imgData.length > 0"><i
+                    class="fa fa-refresh" aria-hidden="true"></i> Start
+                  Conversion</label>
 
-                <span class="imageUploadText" *ngIf="imgData.length == 3"
-                  >You Cannot Upload More Then 3 Images</span
-                >
+                <span class="imageUploadText" *ngIf="imgData.length == 3">You Cannot Upload More Then 3 Images</span>
               </div>
             </div>
           </div>
@@ -128,7 +92,7 @@
       </p>
     </div>
   </div>
-
+  <!-- *ngIf="showPreview" -->
   <div class="container mt-5" *ngIf="showPreview">
     <div class="row">
       <div class="offset-sm-2 col-md-6 ml-auto col-xl-6 mr-auto">
@@ -136,22 +100,14 @@
           <div class="card-header">
             <ul class="nav nav-tabs justify-content-center" role="tablist">
               <li class="nav-item">
-                <a
-                  [ngClass]="showOriginal ? 'nav-link active' : 'nav-link'"
-                  data-toggle="tab"
-                  role="tab"
-                  (click)="toggleImagePreview()"
-                >
+                <a [ngClass]="showOriginal ? 'nav-link active' : 'nav-link'" data-toggle="tab" role="tab"
+                  (click)="toggleImagePreview()">
                   Original
                 </a>
               </li>
               <li class="nav-item">
-                <a
-                  [ngClass]="showConverted ? 'nav-link active' : 'nav-link'"
-                  data-toggle="tab"
-                  role="tab"
-                  (click)="toggleImagePreview()"
-                >
+                <a [ngClass]="showConverted ? 'nav-link active' : 'nav-link'" data-toggle="tab" role="tab"
+                  (click)="toggleImagePreview()">
                   Remove background
                 </a>
               </li>
@@ -160,30 +116,17 @@
           <div class="card-body">
             <div class="tab-content text-center">
               <div class="tab-pane active" id="home" role="tabpanel">
-                <img
-                  class="black previewImageBorder"
-                  [src]="
+                <img class="black previewImageBorder" [src]="
                     showOriginal == true && showConverted == false
                       ? filePath[activeIndex]
                       : convertedImgData[activeIndex]
-                  "
-                  alt="Bgmoval.AI - Free Background Remover"
-                  width="417"
-                  height="100"
-                />
+                  " alt="Bgmoval.AI - Free Background Remover" width="417" height="100" />
               </div>
             </div>
           </div>
           <div class="thumbnailContainer">
-            <div
-              class="thumbnail"
-              *ngFor="let imagePath of filePath; let i = index"
-            >
-              <img
-                [src]="imagePath"
-                class="thumbnailImage"
-                (click)="setActiveIndex(i)"
-              />
+            <div class="thumbnail" *ngFor="let imagePath of filePath; let i = index">
+              <img [src]="imagePath" class="thumbnailImage" (click)="setActiveIndex(i)" />
             </div>
           </div>
         </div>
@@ -192,22 +135,12 @@
       <div class="col-md-3 ml-auto col-xl-6 mr-auto">
         <div class="cardimageremove1 mobilecardpreview">
           <div class="verticallyCentered">
-            <ul
-              class="nav nav-tabs justify-content-center"
-              role="tablist"
-              style="align-items: center; display: flex"
-            >
+            <ul class="nav nav-tabs justify-content-center" role="tablist" style="align-items: center; display: flex">
               <li class="nav-item mb-2 mt-5">
-                <a
-                  class="nav-link active1"
-                  data-toggle="tab"
-                  role="tab"
-                  *ngIf="
+                <a class="nav-link active1" data-toggle="tab" role="tab" *ngIf="
                     downloadUrl[activeIndex] != undefined &&
                     downloadUrl[activeIndex].lowResolutionUrl != undefined
-                  "
-                  [href]="downloadUrl[activeIndex].lowResolutionUrl"
-                >
+                  " [href]="downloadUrl[activeIndex].lowResolutionUrl">
                   <i class="fa fa-download" aria-hidden="true"></i> Download
                 </a>
               </li>
@@ -216,16 +149,10 @@
                 {{ downloadUrl[activeIndex].preview_height }}
               </label>
               <li class="nav-item mb-2 mt-5">
-                <a
-                  class="nav-link active1"
-                  data-toggle="tab"
-                  role="tab"
-                  *ngIf="
+                <a class="nav-link active1" data-toggle="tab" role="tab" *ngIf="
                     downloadUrl[activeIndex] != undefined &&
                     downloadUrl[activeIndex].previewUrl != undefined
-                  "
-                  [href]="downloadUrl[activeIndex].previewUrl"
-                >
+                  " [href]="downloadUrl[activeIndex].previewUrl">
                   <i class="fa fa-download" aria-hidden="true"></i> Download HD
                 </a>
               </li>
@@ -246,12 +173,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload1.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload1.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">
                 Fully Automated Background Remover
               </p>
@@ -263,12 +185,7 @@
           </div>
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload2.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload2.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">Replace to Any Background</p>
               <p class="rm-upload-utilities-content">
                 Easily replace the distracting background with solid background
@@ -278,12 +195,7 @@
           </div>
           <div class="col-md-4">
             <div class="rm-upload-utilities-item">
-              <img
-                src="../../assets/images/upload3.png"
-                alt=""
-                width="244"
-                height="180"
-              />
+              <img src="../../assets/images/upload3.png" alt="" width="244" height="180" />
               <p class="rm-upload-utilities-title">Design the way you want</p>
               <p class="rm-upload-utilities-content">
                 Get a transparent image then easily yet effectively create
@@ -316,10 +228,7 @@
                   </div>
                   <h3 class="pri-mobile1">{{ this.totalQuantity }}</h3>
                   <h4 class="pri-mobile1">Total images</h4>
-                  <button
-                    class="btn btn-mobile"
-                    (click)="showPaymentOption(); convertImages()"
-                  >
+                  <button class="btn btn-mobile" (click)="showPaymentOption(); convertImages()">
                     Proceed
                   </button>
                 </div>
