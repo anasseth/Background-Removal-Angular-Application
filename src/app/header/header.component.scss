@@ -83,18 +83,20 @@
   }
 }
 
-
-.menu-item1{
-  color:black;
+.menu-item1 {
+  color: black;
   cursor: pointer;
-}
-.menu-item1:hover{
-  color:purple;
-  cursor: pointer;
+  transition-duration: 0.4s;
+  border: 4px solid transparent;
 }
 
-
-.cur{
+.menu-item1:hover {
+  color: purple;
+  border-bottom: 4px solid purple;
+  transition-duration: 0.4s;
   cursor: pointer;
+}
 
+.cur {
+  cursor: pointer;
 }

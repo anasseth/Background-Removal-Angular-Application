@@ -111,6 +111,8 @@ export class ImageuploadComponent implements OnInit {
             "onApprove - you can get full order details inside onApprove: ",
             details
           );
+          // Uncomment this line before testing payment method and moving for deployment.
+          // this.convertImages()
         });
       },
       onClientAuthorization: data => {
@@ -218,6 +220,12 @@ export class ImageuploadComponent implements OnInit {
               console.log("Image Data Showing")
               console.log(data)
 
+              //When you are using Production or for deployment usecase
+              // Uncomment the below line
+              //it provide download URL for high resolution images
+              // checkout commented message on line number 221 & 237 in template page
+
+              // this.downloadUrl[this.convertingImageCount].highResolutionUrl = data.high_resolution
               this.downloadUrl[this.convertingImageCount].lowResolutionUrl = data.low_resolution;
               this.downloadUrl[this.convertingImageCount].previewUrl = data.preview_demo;
               this.downloadUrl[this.convertingImageCount].original_height = data.original_height;
