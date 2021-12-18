@@ -3,10 +3,9 @@
     <div class="rst-inner-header">
       <div class="container">
         <div class="rst-logo">
-          <a href="https://Bgmoval.ai/">
+          <a>
             <img
               class="black"
-              src="https://Bgmoval.ai/wp-content/uploads/2020/10/logo-1.png"
               alt="Bgmoval.AI - Free Background Remover"
               width="217"
               height="40"
@@ -35,10 +34,7 @@
           <h1 class="title_banner">
             Remove Image Background Using Artificial Intelligence
           </h1>
-          <div
-            class="rm-upload-content rm-upload-free"
-            data-url="https://Bgmoval.ai/upload/"
-          >
+          <div class="rm-upload-content rm-upload-free">
             <div class="rm-upload-inner">
               <form enctype="multipart/form-data" id="form_upload">
                 <div class="rst-form-group-choose">
@@ -110,15 +106,15 @@
           </div>
           <p class="privacy-banner">
             By uploading an image or URL you agree to our
-            <a target="_blank" href="https://Bgmoval.ai/term/"
+            <a target="_blank" [routerLink]="['/termcondition']"
               >Terms of Service</a
             >
             . This site is protected by reCaptcha and its
-            <a target="_blank" href="https://Bgmoval.ai/privacy/"
+            <a target="_blank" [routerLink]="['/privacypolicy']"
               >Privacy Policy</a
             >
             and
-            <a target="_blank" href="https://Bgmoval.ai/term/"
+            <a target="_blank" [routerLink]="['/termcondition']"
               >Terms of Service</a
             >
             apply.
@@ -165,7 +161,7 @@
                 <p class="rst-product-content-item">
                   Process over 1,000 of images in a single upload
                 </p>
-                <a href="https://Bgmoval.ai/upload"
+                <a [routerLink]="['/']"
                   >Try Our Free Background Remover</a
                 >
               </div>
@@ -189,9 +185,7 @@
                 <p class="rst-product-content-item">
                   Presets to fit in different marketplaces.
                 </p>
-                <a href="https://Bgmoval.ai/free-online-photo-editor/"
-                  >Try Our Free Online Photo Editor</a
-                >
+                <a>Try Our Free Online Photo Editor</a>
               </div>
               <div class="col-md-7 rst-product-image">
                 <img
@@ -234,7 +228,7 @@
                 <p class="rst-product-content-item">
                   Dedicated customer support
                 </p>
-                <a href="https://Bgmoval.ai/contact"
+                <a [routerLink]="['/contactus']"
                   >Contact Us For Your Custom Needs</a
                 >
               </div>
@@ -255,7 +249,7 @@
             their creative power and unlock their business potential. If you
             need help, we are happy to work with you!
           </p>
-          <a class="hi" href="https://Bgmoval.ai/contact">Say Hi To Our Team</a>
+          <a class="hi" [routerLink]="['/contactus']">Say Hi To Our Team</a>
         </div>
         <div class="rst-say-hi-image">
           <img
@@ -373,12 +367,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <h3>Blog <a href="https://Bgmoval.ai/blog"> </a></h3>
+            <h3>Blog <a [routerLink]="['/']"> </a></h3>
             <ul>
               <li>
                 <a
-                  target="_blank"
-                  href="https://Bgmoval.ai/product-photography-trends/"
                   >Nov 16, 2021
                   <b
                     >5 Product Photography Trends to Incorporate Into Your
@@ -387,17 +379,13 @@
                 >
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://Bgmoval.ai/Bgmoval-ai-a-powerful-photo-editor-for-photographers/"
+                <a [routerLink]="['/']"
                   >Nov 5, 2021
                   <b>Bgmoval, A Powerful Photo Editor for Photographers</b></a
                 >
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://Bgmoval.ai/digital-marketing-seeing-the-future-with-computer-vision/"
+                <a [routerLink]="['/']"
                   >Oct 23, 2021
                   <b
                     >Digital Marketing: Seeing the Future with Computer
@@ -406,9 +394,7 @@
                 >
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://Bgmoval.ai/web-design-and-development-accessing-the-power-of-ai-to-improve-your-workflow/"
+                <a [routerLink]="['/']"
                   >Oct 16, 2021
                   <b
                     >Web Design and Development: Accessing the Power of AI to
