@@ -122,14 +122,15 @@
 
     <div class="rm-upload-process-bottom" id="rm-upload-result">
       <div class="rm-upload-process-bottom-inner"></div>
-      <p class="msg">
+      <p class="msg" id="Demo" fragment="Demo">
         Please download your files. They will be discarded automatically. Images
         are not stored on our server
       </p>
     </div>
   </div>
   <!-- *ngIf="showPreview" -->
-  <div class="container mt-5" *ngIf="showPreview">
+  <!-- <div id="Demo" fragment="Demo"></div> -->
+  <div class="container mt-5" *ngIf="showPreview && downloadUrl.length > 0">
     <div class="row">
       <div class="offset-sm-2 col-md-6 ml-auto col-xl-6 mr-auto">
         <div class="cardimageremove">
@@ -216,7 +217,6 @@
                 {{ downloadUrl[activeIndex].preview_height }}
               </label>
               <li class="nav-item mb-2 mt-5">
-
                 <!-- 
 Comment Down the below button for production or actual deployment usecase
                  -->
@@ -243,7 +243,6 @@ Comment Down the below button for production or actual deployment usecase
                   " [href]="downloadUrl[activeIndex].highResolutionUrl">
                   <i class="fa fa-download" aria-hidden="true"></i> Download HD
                 </a> -->
-
               </li>
               <label class="msg">
                 Full Image {{ downloadUrl[activeIndex].original_width }} x

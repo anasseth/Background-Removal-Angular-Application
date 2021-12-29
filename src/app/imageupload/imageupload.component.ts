@@ -1,28 +1,31 @@
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { RemovalAIService } from '../service/removal-ai.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ModalManager } from 'ngb-modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { environment } from "src/environments/environment";
+import { ViewportScroller } from '@angular/common';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-imageupload',
   templateUrl: './imageupload.component.html',
   styleUrls: ['./imageupload.component.scss']
 })
-export class ImageuploadComponent implements OnInit {
+export class ImageuploadComponent implements OnInit, AfterViewInit {
 
   @ViewChild('myModal') myModal: any;
 
   imageUrl: string = "https://file.removal.ai/low_resolution/7aba9b9d-2dcb-4063-8b41-4cd6b707ce56_test-women.png";
   base64image: any;
 
-  showPreview: Boolean = false;
+  showPreview: Boolean = true;
   activeIndex: number = 0;
-  showOriginal: boolean = true;
-  showConverted: boolean = false;
+  showOriginal: boolean = false;
+  showConverted: boolean = true;
   convertedImgData: any = [];
   filePath: any = [];
   showDownloadButton: boolean = false;
@@ -43,13 +46,17 @@ export class ImageuploadComponent implements OnInit {
   clearData: boolean = false
   totalBilling: any = 0;
   totalQuantity: any = 0;
+  private fragment: any = "";
 
   constructor(
     public fb: FormBuilder,
     public _BackgroundRemovingService: RemovalAIService,
     private modalService: ModalManager,
     private _snackBar: MatSnackBar,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private route: ActivatedRoute,
+    public router: Router,
+    public scroller: ViewportScroller
   ) {
     this.myForm = this.fb.group({
       img: [null],
@@ -59,7 +66,22 @@ export class ImageuploadComponent implements OnInit {
 
   ngOnInit(): void {
     this.initConfig();
+    this.route.fragment.subscribe(fragment => {
+      this.fragment = fragment;
+    });
   }
+
+  ngAfterViewInit(): void {
+    try {
+      document.querySelector('#' + this.fragment)!.scrollIntoView();
+    } catch (e) {
+    }
+  }
+
+  navigateImageUploadContainer() {
+    this.scroller.scrollToAnchor("Demo");
+  }
+
 
   private initConfig(): void {
     this.payPalConfig = {
@@ -271,6 +293,7 @@ export class ImageuploadComponent implements OnInit {
         this.spinner.hide();
         this.clearData = false;
         this.closeModal();
+        this.navigateImageUploadContainer()
       }
     }
     else {
