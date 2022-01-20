@@ -28,6 +28,7 @@ export class ImageuploadComponent implements OnInit, AfterViewInit {
   showConverted: boolean = true;
   convertedImgData: any = [];
   filePath: any = [];
+  unconvertedImages: number = 0;
   showDownloadButton: boolean = false;
   showSuccessMsg: boolean = false;
   downloadUrl: any = [];
@@ -216,6 +217,7 @@ export class ImageuploadComponent implements OnInit, AfterViewInit {
           filename: ['']
         })
       }
+      this.checkUnconvertedImages()
     }
     else {
       console.log("Inside Else")
@@ -293,7 +295,8 @@ export class ImageuploadComponent implements OnInit, AfterViewInit {
         this.spinner.hide();
         this.clearData = false;
         this.closeModal();
-        this.navigateImageUploadContainer()
+        this.navigateImageUploadContainer();
+        this.checkUnconvertedImages();
       }
     }
     else {
@@ -345,9 +348,21 @@ export class ImageuploadComponent implements OnInit, AfterViewInit {
     this.filePath.splice(i, 1)
     this.downloadUrl.splice(i, 1)
     this.convertedImgData.splice(i, 1)
+    this.checkUnconvertedImages()
+    this.activeIndex = 0;
+    if (this.imgData.length == 0) {
+      this.showSuccessMsg = false;
+    }
     console.log("Image Data", this.imgData)
     console.log("FilePath Data", this.filePath)
     console.log("Download URL", this.downloadUrl)
+    console.log("Unconverted Images : ", this.unconvertedImages)
+  }
+
+
+  checkUnconvertedImages() {
+    this.unconvertedImages = this.downloadUrl.filter((x: any) => x.isURLavailable == false).length;
+    console.log("Unconverted Images : ", this.unconvertedImages)
   }
 
   // clearDownloadedImages() {

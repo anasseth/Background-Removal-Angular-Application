@@ -1,9 +1,6 @@
 <div class="over">
   <div
-    class="
-      rm-upload-process-content rm-hidden rm-upload-container
-      page-template-template-general
-    "
+    class="rm-upload-process-content rm-hidden rm-upload-container page-template-template-general"
   >
     <p class="ImageUploadMainText">
       Remove The Background From Your Image Instantly
@@ -88,7 +85,11 @@
               <div class="rst-form-group-button">
                 <label
                   id="rst_choose_upload"
-                  [ngClass]="imgData.length == 3 ? 'disabled' : ''"
+                  [ngClass]="
+                    imgData.length == 3 || unconvertedImages == 1
+                      ? 'disabled'
+                      : ''
+                  "
                   for="rm_upload_file"
                   ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
                   IMAGE ({{ this.imgData.length }})</label
@@ -100,7 +101,9 @@
                   name="rm_file_upload"
                   (change)="imagePreview($event)"
                   accept="image/png,image/jpg,image/jpeg"
-                  [disabled]="this.imgData.length == 3"
+                  [disabled]="
+                    this.imgData.length == 3 || unconvertedImages == 1
+                  "
                 />
                 <label
                   class="con"
@@ -112,6 +115,9 @@
 
                 <span class="imageUploadText" *ngIf="imgData.length == 3"
                   >You Cannot Upload More Then 3 Images</span
+                >
+                <span class="imageUploadText" *ngIf="unconvertedImages > 1"
+                  >You Can Convert Single Image Per Conversion</span
                 >
               </div>
             </div>
