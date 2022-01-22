@@ -287,16 +287,18 @@ export class ImageuploadComponent implements OnInit, AfterViewInit {
         }
       }
       else {
-        this.showPreview = true;
-        this.showLoader = false;
-        this.showSuccessMsg = true;
-        this.convertingImageCount = 0;
-        this.showDownloadButton = true;
-        this.spinner.hide();
-        this.clearData = false;
-        this.closeModal();
-        this.navigateImageUploadContainer();
-        this.checkUnconvertedImages();
+        setTimeout(() => {
+          this.showPreview = true;
+          this.showLoader = false;
+          this.showSuccessMsg = true;
+          this.convertingImageCount = 0;
+          this.showDownloadButton = true;
+          this.spinner.hide();
+          this.clearData = false;
+          this.closeModal();
+          this.navigateImageUploadContainer();
+          this.checkUnconvertedImages();
+        }, 1000);
       }
     }
     else {

@@ -108,7 +108,7 @@
                 <label
                   class="con"
                   (click)="openModal(); CalculatePricing()"
-                  *ngIf="this.imgData.length > 0"
+                  *ngIf="this.imgData.length > 0 && unconvertedImages > 0"
                   ><i class="fa fa-refresh" aria-hidden="true"></i> Start
                   Conversion</label
                 >
