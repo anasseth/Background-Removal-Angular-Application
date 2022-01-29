@@ -18,7 +18,7 @@
                   "Please don't close the window or browser because otherwise
                   you will not be able to download the results! No data / image
                   is stored on our servers - therefore we can not restore the
-                  results and you have to convert them again.
+                  results Once you have converted them.
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="card-number">
                   <div class="h3 m-0"></div>
                   Your Images Has Been Successfully Converted. Please Download
-                  it Using the Download Button Below Each Image
+                  it Before the Next Conversion Else You Will Lose Converted Image
                 </div>
               </div>
             </div>
@@ -53,11 +53,12 @@
                   <div class="row" *ngIf="filePath && filePath.length > 0">
                     <div
                       class="col-md-4 imgcard"
+                      style="margin: auto"
                       *ngFor="let imagePath of filePath; let i = index"
                     >
-                      <div class="cancle" (click)="removeImage(i)">
+                      <!-- <div class="cancle" (click)="removeImage(i)">
                         <i class="fa fa-times" aria-hidden="true"></i>
-                      </div>
+                      </div> -->
                       <div class="rm-upload-utilities-item">
                         <img
                           [src]="imagePath"
@@ -67,7 +68,7 @@
                           class="imageUploaded"
                         />
                       </div>
-                      <a
+                      <!-- <a
                         class="download"
                         [href]="downloadUrl[i].lowResolutionUrl"
                         *ngIf="
@@ -77,7 +78,7 @@
                         "
                         ><i class="fa fa-download" aria-hidden="true"></i>
                         Download</a
-                      >
+                      > -->
                     </div>
                   </div>
                 </div>
@@ -86,14 +87,12 @@
                 <label
                   id="rst_choose_upload"
                   [ngClass]="
-                    imgData.length == 3 || unconvertedImages == 1
-                      ? 'disabled'
-                      : ''
+                    imgData.length == 3 || unconvertedImages == 1 ? '' : ''
                   "
                   for="rm_upload_file"
                   ><i class="fa fa-picture-o" aria-hidden="true"></i> UPLOAD
-                  IMAGE ({{ this.imgData.length }})</label
-                >
+                  IMAGE
+                </label>
                 <input
                   type="file"
                   class="form-control"
@@ -101,9 +100,6 @@
                   name="rm_file_upload"
                   (change)="imagePreview($event)"
                   accept="image/png,image/jpg,image/jpeg"
-                  [disabled]="
-                    this.imgData.length == 3 || unconvertedImages == 1
-                  "
                 />
                 <label
                   class="con"
@@ -113,9 +109,6 @@
                   Conversion</label
                 >
 
-                <span class="imageUploadText" *ngIf="imgData.length == 3"
-                  >You Cannot Upload More Then 3 Images</span
-                >
                 <span class="imageUploadText" *ngIf="unconvertedImages > 1"
                   >You Can Convert Single Image Per Conversion</span
                 >

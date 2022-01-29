@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   removalAI: "https://api.removal.ai/3.0/remove",
-  removalAiToken: "61ec7d57b99aa7.33493544",
+  removalAiToken: "61f5ac713101d9.43139000",
 };
 
 /*

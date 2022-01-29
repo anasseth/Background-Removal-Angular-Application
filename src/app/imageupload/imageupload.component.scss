@@ -21,7 +21,7 @@
 }
 
 .rst-form-group-choose {
-  max-width: 1160px !important;
+  max-width: 50% !important;
 }
 
 .rm-upload-utilities {
@@ -72,7 +72,7 @@
 .rst-form-group-choose .rst-form-group {
   border: 1px solid #ffffff;
   border-radius: 3px;
-  padding: 45px 30px 35px 30px;
+  padding: 15px 30px 35px 30px;
   position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 20px;
@@ -667,13 +667,11 @@ img {
   .mobilecardpreview {
     transform: translate(0px) !important;
     height: 400px !important;
-
   }
-.offset-sm-2 {
+  .offset-sm-2 {
     margin-left: 0% !important;
+  }
 }
-}
-
 
 // @media (min-width: 576px){
 // .offset-sm-2 {
